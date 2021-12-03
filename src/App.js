@@ -1,7 +1,9 @@
 import logo from './logo.svg';
 import React, { Component } from 'react';
 import movieData from './movieData';
-import './App.css';
+import './App.scss';
+import Nav from './Nav';
+import MovieSection from './MovieSection';
 
 class App extends Component {
   constructor() {
@@ -11,7 +13,8 @@ class App extends Component {
 
   render() {
     return (
-      <div></div>
+      <Nav />
+      <MovieSection />
     );
   }
 }
