@@ -3,7 +3,13 @@ import './Nav.scss';
 
 const Nav = () => {
     return (
-        <div></div>
+        <nav>
+            <h1>RANCID TOMATILLOS</h1>
+            <div className="nav-links">
+                <button>HOME</button>
+                <button>ABOUT</button>
+            </div>
+        </nav>
     )
 }
 
