@@ -14,8 +14,10 @@ class App extends Component {
 
   render() {
     return (
-      <Nav />
-      <MovieSection />
+      <main className="app">
+        <Nav />
+        <MovieSection />
+      </main>
     );
   }
 }

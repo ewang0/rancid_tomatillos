@@ -1,0 +1,11 @@
+@use "mixins.scss" as mixin;
+// @mixin flexbox($direction:unset, $justify:unset, $align:unset) {
+//     display: flex;
+//     flex-direction: $direction;
+//     justify-content: $justify;
+//     align-items: $align;
+// }
+nav {
+    width: 100%;
+    @include mixin.flexbox(0, space-between, center);
+}
