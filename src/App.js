@@ -1,17 +1,22 @@
-import logo from './logo.svg';
 import React, { Component } from 'react';
 import movieData from './movieData';
+import MovieSection from './MovieSection'
 import './App.css';
 
 class App extends Component {
   constructor() {
     super();
-    this.state = {};
+    this.state = {
+      movieData,
+    };
   }
 
   render() {
     return (
-      <div></div>
+      <main>
+        <h1>Rancid Tomatillos</h1>
+        <MovieSection createCards={this.state.movieData}/>
+      </main>
     );
   }
 }
