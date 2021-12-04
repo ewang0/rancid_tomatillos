@@ -20,6 +20,17 @@ class App extends Component {
     })
   }
 
+  getModalInfo(event) {
+    // this.setState({
+    //   src: {event.target},
+    //   title:'',
+    //   description:'',
+    //   rating:'',
+    //   budget:'',
+    //   revenue:''
+    // })
+  }
+
   render() {
     return (
       <main className="app">
