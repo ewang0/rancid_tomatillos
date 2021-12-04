@@ -3,8 +3,8 @@ import './MovieSection.scss'
 import MovieCard from './MovieCard';
 import './MovieSection.js';
 
-const MovieSection = (movieDataArray) => {
-  const createCards = movieDataArray.createCards.map(movie => {
+const MovieSection = (props) => {
+  const createCards = props.movies.map(movie => {
     return (
       <MovieCard
         id={movie.id}

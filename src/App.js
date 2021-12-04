@@ -17,7 +17,7 @@ class App extends Component {
     return (
       <main className="app">
         <Nav />
-        <MovieSection createCards={this.state.movieData}/>
+        <MovieSection movies={this.state.movieData.movies}/>
       </main>
     );
   }
