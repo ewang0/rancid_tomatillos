@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import React, { Component } from 'react';
 import movieData from './movieData';
 import './App.scss';
@@ -9,14 +8,16 @@ import MovieCard from './MovieCard';
 class App extends Component {
   constructor() {
     super();
-    this.state = {};
+    this.state = {
+      movieData,
+    };
   }
 
   render() {
     return (
       <main className="app">
         <Nav />
-        <MovieSection />
+        <MovieSection createCards={this.state.movieData}/>
       </main>
     );
   }
