@@ -25,12 +25,12 @@ class App extends Component {
       <main className="app">
         <Nav />
         <div>
-          <div className="btn" onClick={this.toggleModal}>
+          {/* <div className="btn" onClick={this.toggleModal}>
             <button>Modal</button>
-          </div>
+          </div> */}
           {this.state.show ? <Modal toggleModal={this.toggleModal} /> : null}
         </div>
-        <MovieSection movies={this.state.movieData.movies}/>
+        <MovieSection movies={this.state.movieData.movies} toggleModal={this.toggleModal} />
       </main>
     );
   }
