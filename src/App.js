@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import movieData from './movieData';
-import MovieSection from './MovieSection'
-import './App.css';
+import './App.scss';
+import Nav from './Nav';
+import MovieSection from './MovieSection';
+import MovieCard from './MovieCard';
 
 class App extends Component {
   constructor() {
@@ -13,9 +15,9 @@ class App extends Component {
 
   render() {
     return (
-      <main>
-        <h1>Rancid Tomatillos</h1>
-        <MovieSection createCards={this.state.movieData}/>
+      <main className="app">
+        <Nav />
+        <MovieSection movies={this.state.movieData.movies}/>
       </main>
     );
   }
