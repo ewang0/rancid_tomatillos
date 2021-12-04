@@ -1,0 +1,12 @@
+.modal {
+  position: fixed;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.25);
+  height: 100px;
+  width: 400px;
+}
+
+.modal_content {
+  background-color: white;
+  position: absolute;
+}
