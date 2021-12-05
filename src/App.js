@@ -4,7 +4,7 @@ import './App.scss';
 import Nav from './Nav';
 import MovieSection from './MovieSection';
 import Modal from './Modal.js';
-import { getAllMovies } from './apiCalls';
+import { getAllMovies, getSingleMovie } from './apiCalls';
 
 class App extends Component {
   constructor() {
@@ -33,12 +33,16 @@ class App extends Component {
   }
 
   toggleModal = (id) => {
-    const movieObject = this.state.movieData.movies.find((movie) => movie.id === id);
-    this.setState({
-      showModal: !this.state.showModal,
-      selectedMovie: movieObject
-    })
-    console.log(this.state.selectedMovie)
+    if(!this.state.showModal) {
+      getSingleMovie(id).then(data => { 
+        this.setState({
+          showModal: !this.state.showModal,
+          selectedMovie: data.movie
+        })
+      });
+    } else {
+      this.setState({ showModal: !this.state.showModal })
+    }
   }
 
   render() {
