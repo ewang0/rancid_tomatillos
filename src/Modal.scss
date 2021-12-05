@@ -1,0 +1,22 @@
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.8);
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal_content {
+  width: 720px;
+  height: 760px;
+  color: white;
+  background: linear-gradient(180deg, rgba(72, 4, 4, 0.92) 56.77%, rgba(72, 4, 4, 0) 100%);
+  img {
+    width: inherit;
+  }
+}
