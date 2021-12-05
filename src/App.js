@@ -4,15 +4,32 @@ import './App.scss';
 import Nav from './Nav';
 import MovieSection from './MovieSection';
 import Modal from './Modal.js';
+import { getAllMovies } from './apiCalls';
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      movieData,
+      movieData: [],
+      error: '',
       showModal: false,
-      selectedMovie: {}
+      selectedMovie: {},
+      loaded: false
     };
+  }
+
+  componentDidMount = () => {
+    getAllMovies()
+      .then(data => { 
+        const movies = this.destructureMovieData(data)
+        this.setState({ movieData: {movies} }) 
+      })
+      .catch(error => this.setState({ error: 'Error fetching data'}))
+      .finally(() => this.setState({loaded: true}))
+  }
+
+  destructureMovieData = (data) => {
+    return data.movies;
   }
 
   toggleModal = (id) => {
@@ -30,12 +47,11 @@ class App extends Component {
       <main className="app">
         <Nav />
         <div>
-          {/* <div className="btn" onClick={this.toggleModal}>
-            <button>Modal</button>
-          </div> */}
           {this.state.showModal ? <Modal id={selectedMovie.id} title={selectedMovie.title} averageRating={selectedMovie.average_rating} backdropPath={selectedMovie.backdrop_path} releaseDate={selectedMovie.release_date} toggleModal={this.toggleModal} /> : null}
         </div>
-        <MovieSection movies={this.state.movieData.movies} toggleModal={this.toggleModal} />
+        <div>
+          {this.state.loaded ? <MovieSection data={this.state.movieData.movies} toggleModal={this.toggleModal} /> : <h1>Loading</h1>}
+        </div>
       </main>
     );
   }
