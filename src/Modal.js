@@ -19,7 +19,7 @@ class Modal extends React.Component {
   };
 
   render() {
-    console.log(this.state.backdropPath)
+    // console.log(this.state.backdropPath)
     return (
       <div className='modal'>
         <div className='modal_content'>
