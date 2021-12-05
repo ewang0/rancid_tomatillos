@@ -4,7 +4,6 @@ import MovieCard from './MovieCard';
 import './MovieSection.js';
 
 const MovieSection = ({data, toggleModal}) => {
-    console.log(data)
     const createCards = data.map(movie => {
         return (
         <MovieCard
