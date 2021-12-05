@@ -1,18 +1,32 @@
 import React, { Component } from 'react';
-import movieData from './movieData';
+// import movieData from './movieData';
 import './App.scss';
 import Nav from './Nav';
 import MovieSection from './MovieSection';
 import Modal from './Modal.js';
+import { getAllMovies } from './apiCalls';
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      movieData,
+      movieData: [],
+      error: '',
       showModal: false,
       selectedMovie: {}
     };
+  }
+
+  componentDidMount = () => {
+    getAllMovies()
+      .then(data => { 
+        const movies = this.destructureMovieData(data)
+        this.setState({ movieData: {movies} }) })
+      .catch(error => this.setState({ error: 'Error my dude'}))
+  }
+
+  destructureMovieData = (data) => {
+    return data.movies;
   }
 
   toggleModal = (id) => {
@@ -35,7 +49,7 @@ class App extends Component {
           </div> */}
           {this.state.showModal ? <Modal id={selectedMovie.id} title={selectedMovie.title} averageRating={selectedMovie.average_rating} backdropPath={selectedMovie.backdrop_path} releaseDate={selectedMovie.release_date} toggleModal={this.toggleModal} /> : null}
         </div>
-        <MovieSection movies={this.state.movieData.movies} toggleModal={this.toggleModal} />
+        <MovieSection data={this.state.movieData} toggleModal={this.toggleModal} />
       </main>
     );
   }
