@@ -10,28 +10,22 @@ class App extends Component {
     super();
     this.state = {
       movieData,
-      show: false,
+      showModal: false,
+      selectedMovie: {}
     };
   }
 
-  toggleModal = () => {
+  toggleModal = (id) => {
+    const movieObject = this.state.movieData.movies.find((movie) => movie.id === id);
     this.setState({
-      show: !this.state.show
+      showModal: !this.state.showModal,
+      selectedMovie: movieObject
     })
-  }
-
-  getModalInfo(event) {
-    // this.setState({
-    //   src: {event.target},
-    //   title:'',
-    //   description:'',
-    //   rating:'',
-    //   budget:'',
-    //   revenue:''
-    // })
+    console.log(this.state.selectedMovie)
   }
 
   render() {
+    const selectedMovie = this.state.selectedMovie;
     return (
       <main className="app">
         <Nav />
@@ -39,7 +33,7 @@ class App extends Component {
           {/* <div className="btn" onClick={this.toggleModal}>
             <button>Modal</button>
           </div> */}
-          {this.state.show ? <Modal toggleModal={this.toggleModal} /> : null}
+          {this.state.showModal ? <Modal id={selectedMovie.id} title={selectedMovie.title} averageRating={selectedMovie.average_rating} backdropPath={selectedMovie.backdrop_path} releaseDate={selectedMovie.release_date} toggleModal={this.toggleModal} /> : null}
         </div>
         <MovieSection movies={this.state.movieData.movies} toggleModal={this.toggleModal} />
       </main>

@@ -2,13 +2,13 @@ import React from 'react';
 import './Modal.scss';
 
 class Modal extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
-      src: '',
-      title:'',
-      description:'',
-      rating:'',
+      backdropPath: this.props.backdropPath,
+      title: this.props.title,
+      description: '',
+      rating: this.props.averageRating,
       budget:'',
       revenue:''
     }
@@ -19,11 +19,12 @@ class Modal extends React.Component {
   };
 
   render() {
+    console.log(this.state.backdropPath)
     return (
       <div className='modal'>
         <div className='modal_content'>
-          <img src="https://image.tmdb.org/t/p/original//oazPqs1z78LcIOFslbKtJLGlueo.jpg"/>
-          <h2>Fake Movie Title</h2>
+          <img src={this.state.backdropPath}/>
+          <h2>{this.state.title}</h2>
           <p>Class 1-A visits Nabu Island where they finally get to do some real hero work. The place is so peaceful that it's more like a vacation … until they're attacked by a villain with an unfathomable Quirk! His power is eerily familiar, and it looks like Shigaraki had a hand in the plan. But with All Might retired and citizens' lives on the line, there's no time for questions. Deku and his friends are the next generation of heroes, and they're the island's only hope.</p>
           <table>
             <tr>
