@@ -3,20 +3,46 @@
   top: 0;
   left: 0;
   z-index: 2;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.9);
   height: 100%;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  .close-modal {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    right: 0;
+    margin: 30px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    :hover {
+      opacity: 80%;
+    }
+    img {
+      width: 30px;
+    }
+  }
 }
 
 .modal_content {
-  width: 720px;
-  height: 760px;
+  width: 1300px;
+  height: 450px;
   color: white;
-  background: linear-gradient(180deg, rgba(72, 4, 4, 0.92) 56.77%, rgba(72, 4, 4, 0) 100%);
+  background: #1b1b1b;
+  display: flex;
+  align-items: center;
   img {
-    width: inherit;
+    height: inherit;
   }
+  th {
+    font-weight: normal;
+    text-align: left;
+  }
+}
+
+.modal-info {
+  margin: 60px;
 }
