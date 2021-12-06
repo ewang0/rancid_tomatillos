@@ -66,9 +66,9 @@ class App extends Component {
             /> 
             : null}
         </div>
-        <div>
-          {this.state.loaded ? <MovieSection data={this.state.movieData.movies} toggleModal={this.toggleModal} /> : <h1>Loading</h1>}
-        </div>
+          <div>
+            {this.state.loaded ? <MovieSection data={this.state.movieData.movies} toggleModal={this.toggleModal} /> : <h1>Loading</h1>}
+          </div>
       </main>
     );
   }
