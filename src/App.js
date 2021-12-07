@@ -4,7 +4,11 @@ import Nav from './Nav';
 import MovieSection from './MovieSection';
 import Modal from './Modal.js';
 import Search from './search';
+import Banner from './Banner';
+// import About from '.About';
 import { getAllMovies, getSingleMovie } from './apiCalls';
+import { Routes, Route, NavLink } from 'react-router-dom'
+
 
 class App extends Component {
   constructor() {
@@ -63,27 +67,23 @@ class App extends Component {
     return (
       <main className="app">
         <Nav />
-        {/* <Banner /> */}
-        <div>
-          {this.state.showModal ? 
-          <Modal 
-            id={selectedMovie.id} 
-            title={selectedMovie.title} 
-            averageRating={selectedMovie.average_rating} 
-            backdropPath={selectedMovie.backdrop_path} 
-            releaseDate={selectedMovie.release_date} 
-            toggleModal={this.toggleModal} 
-            description={selectedMovie.overview} 
-            budget={selectedMovie.budget} 
-            revenue={selectedMovie.revenue}
-            /> 
-            : null}
-        </div>
-        <Search handleChange={(e) => this.setState({searchField:e.target.value})}/>
-          <div>
-            {this.state.loaded ? <MovieSection data={filteredMovies} toggleModal={this.toggleModal} /> : <h1>Loading</h1>}
-          </div>
+        <Routes>
+            <Route path="/" element={      
+                <section>
+                  <Search handleChange={(e) => this.setState({searchField:e.target.value})}/>
+                  <Banner />
+                  <div>
+                    {this.state.loaded ? <MovieSection data={filteredMovies} toggleModal={this.toggleModal} /> : <h1>Loading</h1>}
+                  </div>
+                  <div>
+                      {this.state.showModal ? <Modal selectedMovie={selectedMovie} toggleModal={this.toggleModal}/> : null}
+                    </div>
+                </section>
+              } />
+            {/* <Route path="/about" element={<About />}/> */}
+        </Routes>
       </main>
+
     );
   }
 }
