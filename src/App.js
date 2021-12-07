@@ -3,7 +3,7 @@ import './App.scss';
 import Nav from './Nav';
 import MovieSection from './MovieSection';
 import Modal from './Modal.js';
-import Banner from './Banner.js';
+import Search from './search';
 import { getAllMovies, getSingleMovie } from './apiCalls';
 
 class App extends Component {
@@ -12,9 +12,10 @@ class App extends Component {
     this.state = {
       movieData: [],
       error: '',
-      showModal: true,
+      showModal: false,
       selectedMovie: {},
-      loaded: false
+      loaded: false,
+      searchfield: ''
     };
   }
 
@@ -47,10 +48,22 @@ class App extends Component {
 
   render() {
     const selectedMovie = this.state.selectedMovie;
+    const { movieData, loaded, searchField } = this.state;
+    let filteredMovies = movieData.movies;
+    if (loaded && searchField) {
+      filteredMovies = movieData.movies.filter(movie => (
+        movie.title.toLowerCase().includes(searchField.toLowerCase())
+      ))
+      console.log('filteredMovies', filteredMovies)
+    } else {
+      filteredMovies = movieData.movies;
+    }
+
+
     return (
       <main className="app">
         <Nav />
-        <Banner />
+        {/* <Banner /> */}
         <div>
           {this.state.showModal ? 
           <Modal 
@@ -66,8 +79,9 @@ class App extends Component {
             /> 
             : null}
         </div>
+        <Search handleChange={(e) => this.setState({searchField:e.target.value})}/>
           <div>
-            {this.state.loaded ? <MovieSection data={this.state.movieData.movies} toggleModal={this.toggleModal} /> : <h1>Loading</h1>}
+            {this.state.loaded ? <MovieSection data={filteredMovies} toggleModal={this.toggleModal} /> : <h1>Loading</h1>}
           </div>
       </main>
     );
