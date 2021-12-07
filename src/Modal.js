@@ -1,5 +1,6 @@
 import React from 'react';
 import './Modal.scss';
+import ReactStars from 'react-stars';
 
 class Modal extends React.Component {
   constructor(props) {
@@ -26,6 +27,9 @@ class Modal extends React.Component {
         <div className='modal_content'>
           <section className='modal-info'>
             <h2>{this.state.title}</h2>
+            <div className='ratingsContainer'>
+              <ReactStars count={5} value={this.state.rating / 2} size={15} color2={'lightgrey'} />
+            </div>
             <p>{this.props.description}</p>
             <table>
               <tr>
