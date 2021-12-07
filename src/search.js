@@ -4,16 +4,15 @@ const Search = (props) => {
 	return (
 	<form action="/" method="get">
         <label htmlFor="header-search">
-            <span className="visually-hidden">Search blog posts</span>
+            <span className="visually-hidden">Search Movies</span>
         </label>
         <input
             type="text"
             id="header-search"
             placeholder="Search movies"
-						onChange={props.handleChange}
+			onChange={props.handleChange}
             name="s" 
         />
-        <button type="submit">Search</button>
     </form>
 	)
 }

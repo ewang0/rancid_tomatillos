@@ -4,7 +4,6 @@ import Nav from './Nav';
 import MovieSection from './MovieSection';
 import Modal from './Modal.js';
 import Search from './search';
-// import Banner from './Banner.js';
 import { getAllMovies, getSingleMovie } from './apiCalls';
 
 class App extends Component {
@@ -58,7 +57,6 @@ class App extends Component {
       console.log('filteredMovies', filteredMovies)
     } else {
       filteredMovies = movieData.movies;
-      // console.log(filteredMovies)
     }
 
 
