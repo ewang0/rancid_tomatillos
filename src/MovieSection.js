@@ -20,10 +20,15 @@ const MovieSection = ({data, toggleModal}) => {
 // const createCards = console.log(data);
 
 return (
-    <div className='movie-container'>
-        {createCards}
-    </div>
+    <section className='movie-section'>
+        <h2> All movies </h2>
+        <div className='movie-container'>
+            {createCards}
+        </div>
+    </section>
 )
+   
+
 }
 
 export default MovieSection;
