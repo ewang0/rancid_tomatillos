@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import './App.scss';
-import Nav from './Nav';
-import MovieSection from './MovieSection';
-import Modal from './Modal.js';
-import Search from './search';
-import Banner from './Banner';
+import Nav from '../Nav/Nav';
+import MovieSection from '../MovieSection/MovieSection';
+import Modal from '../Modal/Modal.js';
+import Search from '../Search/search';
+import Banner from '../Banner/Banner';
 // import About from '.About';
-import { getAllMovies, getSingleMovie } from './apiCalls';
+import { getAllMovies, getSingleMovie } from '../../apiCalls';
 import { Routes, Route, NavLink } from 'react-router-dom'
 
 
