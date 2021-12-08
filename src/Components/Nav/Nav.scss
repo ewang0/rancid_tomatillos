@@ -3,13 +3,27 @@
 nav {
     width: 100%;
     height: 100px;
-    background-color: #871414;
+    background-color: #1D1D1D;
     color: white;
     @include mixin.flexbox(0, space-between, center);
     h1 {
         margin-left: 100px;
+        font-weight: 900;
+        font-size: 36px;
     }
     .nav-links {
         margin-right: 100px;
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            margin-left: 30px;
+            padding: 5px 0px 5px 0px;
+        }
+    }
+
+    .active {
+        border-bottom: 3px solid white;
+        font-size: 17px;
+        font-weight: bold;
     }
 }
