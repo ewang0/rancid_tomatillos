@@ -1,6 +1,6 @@
 import React from 'react';
 import './MovieSection.scss'
-import MovieCard from './MovieCard';
+import MovieCard from '../MovieCard/MovieCard';
 import './MovieSection.js';
 
 const MovieSection = ({data, toggleModal}) => {
