@@ -72,12 +72,8 @@ class App extends Component {
                 <section>
                   <Search handleChange={(e) => this.setState({searchField:e.target.value})}/>
                   <Banner />
-                  <div>
-                    {this.state.loaded ? <MovieSection data={filteredMovies} toggleModal={this.toggleModal} /> : <h1>Loading</h1>}
-                  </div>
-                  <div>
-                      {this.state.showModal ? <Modal selectedMovie={selectedMovie} toggleModal={this.toggleModal}/> : null}
-                    </div>
+                  {this.state.loaded ? <MovieSection data={filteredMovies} toggleModal={this.toggleModal} /> : <h1>Loading</h1>}
+                  {this.state.showModal ? <Modal selectedMovie={selectedMovie} toggleModal={this.toggleModal}/> : null}
                 </section>
               } />
             {/* <Route path="/about" element={<About />}/> */}
