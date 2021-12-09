@@ -1,8 +1,14 @@
 import React from 'react';
 import './Modal.scss';
 import ReactStars from 'react-stars';
+import ReactPlayer from "react-player"
+import { getSingleMovieTrailer } from '../../apiCalls';
+import { mockComponent } from 'react-dom/test-utils';
 
-const Modal = ({ selectedMovie, toggleModal }) => {
+const Modal = ({ selectedMovie, toggleModal, selectedMovieTrailerKey }) => {
+
+  const movieTrailer = `https://www.youtube.com/watch?v=${selectedMovieTrailerKey}`
+
   return (
     <div className='modal'>
         <button className='close-modal' onClick={() => toggleModal() }><img src="../x_icon.png" /></button>
@@ -24,7 +30,8 @@ const Modal = ({ selectedMovie, toggleModal }) => {
               </tr>
             </table>
           </section>
-          <img src={selectedMovie.backdrop_path}/>
+          <ReactPlayer className='react-player' url={movieTrailer} light={selectedMovie.backdrop_path} controls='true' />
+          {/* <img src={selectedMovie.backdrop_path}/> */}
         </div>
       </div>
   )

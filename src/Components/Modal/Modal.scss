@@ -34,15 +34,21 @@
   background: #1b1b1b;
   display: flex;
   align-items: center;
-  img {
-    height: inherit;
-  }
+
   th {
     font-weight: normal;
     text-align: left;
+  }
+
+  .react-player {
+    position: relative;
+    top: 0;
+    left: 0;
+    height: inherit;
   }
 }
 
 .modal-info {
   margin: 60px;
+  width: 34%;
 }
