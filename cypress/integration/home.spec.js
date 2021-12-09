@@ -62,14 +62,23 @@ describe('Rancid Tomatillos Home Page', () => {
         cy.get('.card').should('have.length', 3)
     })
 
+    it('should load the cards image and information', () => {
+        cy.get('.card').first().next()
+        .get('img').should('be.visible')
+        .get('.cardTitle').contains('Mulan')
+        .get('.cardYear').contains('2020')
+        .get('.reactStars').should('be.visible')
+    })
+
     it('should open a modal corresponding to the movie card clicked', () => {
-        cy.get('.card').first().click()
-        .get('.modal-info').contains('Money Plane')
+        cy.get('.card').first().next().click()
+        .get('.modal-info').contains('Mulan')
         .get('.ratingsContainer')
-        .get('p').contains('A professional thief with $40 million in debt and his family\'s life on the line must commit one final heist - rob a futuristic airborne casino filled with the world\'s most dangerous criminals.')
-        .next().contains('Budget')
-        .next().contains('$0')
-        .next().contains('Revenue')
+        .get('p').contains('When the Emperor of China issues a decree that one man per family must serve in the Imperial Chinese Army to defend the country from Huns, Hua Mulan, the eldest daughter of an honored warrior, steps in to take the place of her ailing father. She is spirited, determined and quick on her feet. Disguised as a man by the name of Hua Jun, she is tested every step of the way and must harness her innermost strength and embrace her true potential.')
+        .get('table').contains('Budget')
+        .get('table').contains('$200000000')
+        .get('table').contains('Revenue')
+        .get('table').contains('$57000000')
     })
 
 })
