@@ -4,12 +4,10 @@
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); 
     transition: all ease 200ms, box-shadow .3s;
     cursor: pointer;
-    width: 202px;
-    height: 375px;
+    width: 258px;
     display: flex;
     flex-direction: column;
-    align-items: space-between;
-    border-radius: 5px;
+    // border-radius: 5px;
     overflow: hidden;
 
     img {
@@ -17,7 +15,10 @@
     }
 
     .cardBottom {
-        height: 50px;
+        position: relative;
+        height: 82px;
+        display: flex;
+        flex-direction: column;
         // border: 1px solid black;
     }
 
@@ -26,8 +27,7 @@
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        margin: 5px 0 0;
-        height: 70%;
+        margin: 10px 0 0;
         // border: 1px solid red;
     
     }
@@ -39,14 +39,18 @@
     }
 
     .cardTitle {
+        max-width: 161px;
         font-size: 16px;
-        margin-left: 9px;
+        margin-left: 15px;
     }
 
     .cardYear {
+        position: absolute;
+        top: 0;
+        right: 0;
         font-size: 14px;
-        margin-right: 9px;
-        margin-left: 5px;
+        margin-top: 10px;
+        margin-right: 15px;
         font-weight: 700;
     }
 
@@ -55,8 +59,8 @@
         height: 20%;
         display: flex;
         align-items: center;
-        margin-left: 9px;
-        margin-bottom: 2px;
+        margin-left: 15px;
+        margin-bottom: 15px;
         margin-top: 8px;
         // border: 1px solid rgb(0, 208, 255);
     }

@@ -21,8 +21,28 @@ const MovieSection = ({data, toggleModal, header}) => {
 // const createCards = console.log(data);
 
 return (
-    <section className={'movie-section'}>
+    <section className='movie-section'>
         <h2>{header}</h2>
+        <span className='movie-section-header'>
+            <h2> All movies </h2>
+            <ul className='genres'>
+                <li>ACTION</li>
+                <li>ADVENTURE</li>
+                <li>ANIMATION</li>
+                <li>COMEDY</li>
+                <li>CRIME</li>
+                <li>DRAMA</li>
+                <li>FAMILY</li>
+                <li>FANTASY</li>
+                <li>HISTORY</li>
+                <li>HORROR</li>
+                <li>MUSIC</li>
+                <li>ROMANCE</li>
+                <li>SCI-FI</li>
+                <li>THRILLER</li>
+                <li>WAR</li>
+            </ul>
+        </span>
         <div className='movie-container'>
             {createCards}
         </div>
