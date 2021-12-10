@@ -7,6 +7,7 @@ const MovieSection = ({data, toggleModal}) => {
     const createCards = data.map(movie => {
         return (
         <MovieCard
+            key={movie.id}
             id={movie.id}
             title={movie.title}
             average_rating={movie.average_rating}
