@@ -22,9 +22,8 @@ const MovieSection = ({data, toggleModal, header}) => {
 
 return (
     <section className='movie-section'>
-        <h2>{header}</h2>
         <span className='movie-section-header'>
-            <h2> All movies </h2>
+            <h2>{header}</h2>
             <ul className='genres'>
                 <li>ACTION</li>
                 <li>ADVENTURE</li>
