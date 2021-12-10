@@ -1,0 +1,81 @@
+@use "src/mixins.scss" as mixin;
+
+.visually-hidden {
+	clip: rect(0 0 0 0);
+	clip-path: inset(50%);
+	height: 1px;
+	overflow: hidden;
+	position: absolute;
+	white-space: nowrap;
+	width: 1px;
+}
+
+.searchContainer {
+	@include mixin.flexbox(row, center, center);
+	border-radius: 15px;
+	background-color: #494949;
+	overflow: hidden;
+	transition: ease 0.3s;
+	height: 30px;
+}
+
+.searchContainer:hover {
+	border: 1px solid #ffffff;
+	transform: scale(1.02);
+		
+	input::placeholder{
+		color: rgb(207, 207, 207);
+		transition: ease 0.3s;
+	}
+
+}
+
+.searchBar {
+	width: 0px;
+	height: 28px;
+	border-style: none;
+	border-color: none;
+	color: #eaeaea;
+	transition: 0.5s;
+	text-indent: 10px;
+	font-size: 18px;
+	transition: width ease 0.3s;
+	background-color:#494949;
+
+}
+
+.searchBar.show {
+	width: 200px;
+
+}
+
+.icon {
+	height: 20px;
+	filter: brightness(0.25);
+	filter: invert(60%);
+	transform: rotateY(180deg);
+	cursor: pointer;
+	margin-top: 4px;
+	margin-left: 4px;
+	overflow: hidden;
+	transition: ease 0.7s;
+	transform: rotate(0deg);
+}
+
+.icon:hover {
+	filter: brightness(0.25);
+	filter: invert(100%);
+	transform: rotate(360deg);
+}
+
+.searchBar:focus {
+	outline-width: 0;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active  {
+  transition: background-color 5000s;
+  -webkit-text-fill-color: #fff !important;
+}
