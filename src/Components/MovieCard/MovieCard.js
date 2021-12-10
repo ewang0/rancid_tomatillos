@@ -2,7 +2,14 @@ import React from 'react';
 import './MovieCard.scss';
 import ReactStars from 'react-stars'
 
-
+const formatTitle = (title) => {
+  if(title.length > 33) {
+    let abbreviatedTitle = title.substring(0, 30).concat('...');
+    return abbreviatedTitle;
+  } else {
+    return title;
+  }
+}
 const MovieCard = ({id, poster_path, title, average_rating, release_date, toggleModal}) => {
     const year = release_date.slice(0,4);
     return (
@@ -10,7 +17,7 @@ const MovieCard = ({id, poster_path, title, average_rating, release_date, toggle
           <img src={poster_path}/>
           <div className='cardBottom'>
             <div className='cardInfo'>
-              <p className='cardTitle'>{title}</p>
+              <p className='cardTitle'>{formatTitle(title)}</p>
               <p className='cardYear'>{year}</p>
             </div>
             <div className='ratingsContainer'>

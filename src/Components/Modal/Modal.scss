@@ -28,12 +28,14 @@
 }
 
 .modal_content {
+  position: relative;
   width: 1300px;
-  height: 450px;
+  min-height: 500px;
   color: white;
   background: #1b1b1b;
   display: flex;
   align-items: center;
+  justify-content: space-between;
 
   th {
     font-weight: normal;
@@ -41,10 +43,8 @@
   }
 
   .react-player {
-    position: relative;
-    top: 0;
-    left: 0;
-    height: inherit;
+    // flex: 1;
+    margin-right: 60px;
   }
 }
 
