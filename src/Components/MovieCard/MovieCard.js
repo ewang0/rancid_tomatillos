@@ -21,7 +21,7 @@ const MovieCard = ({id, poster_path, title, average_rating, release_date, toggle
               <p className='cardYear'>{year}</p>
             </div>
             <div className='ratingsContainer'>
-              <ReactStars count={5} value={average_rating / 2} size={15} color2={'lightgrey'} />
+              <ReactStars className='reactStars' count={5} value={average_rating / 2} size={15} color2={'lightgrey'} />
             </div>
           </div>
         </div>
