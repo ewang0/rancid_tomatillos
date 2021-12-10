@@ -3,7 +3,7 @@ import './MovieSection.scss'
 import MovieCard from '../MovieCard/MovieCard';
 import './MovieSection.js';
 
-const MovieSection = ({data, toggleModal}) => {
+const MovieSection = ({data, toggleModal, header}) => {
     const createCards = data.map(movie => {
         return (
         <MovieCard
@@ -22,6 +22,7 @@ const MovieSection = ({data, toggleModal}) => {
 
 return (
     <section className='movie-section'>
+        <h2>{header}</h2>
         <span className='movie-section-header'>
             <h2> All movies </h2>
             <ul className='genres'>

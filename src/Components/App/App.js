@@ -3,9 +3,8 @@ import './App.scss';
 import Nav from '../Nav/Nav';
 import MovieSection from '../MovieSection/MovieSection';
 import Modal from '../Modal/Modal.js';
-import Search from '../Search/search';
 import Banner from '../Banner/Banner';
-// import About from '.About';
+import About from '../About/About';
 import { getAllMovies, getSingleMovie, getSingleMovieTrailer } from '../../apiCalls';
 import { Routes, Route, NavLink } from 'react-router-dom'
 
@@ -21,7 +20,7 @@ class App extends Component {
       selectedMovie: {},
       selectedMovieTrailerKey: {},
       loaded: false,
-      searchField: ''
+      searchField: '',
     };
   }
 
@@ -61,17 +60,22 @@ class App extends Component {
 
     return (
       <main className="app">
-        <Nav />
+        <Nav handleChange={(e) => this.setState({searchField:e.target.value})}  />
         <Routes>
             <Route path="/" element={      
                 <section>
-                  <Search handleChange={(e) => this.setState({searchField:e.target.value})}/>
                   <Banner />
-                  {loaded ? <MovieSection data={filteredMovies} toggleModal={this.toggleModal} /> : <h1>Loading</h1>}
+                  {loaded ? <MovieSection data={movieData} toggleModal={this.toggleModal} header={'All Movies'}/> : <h1>Loading</h1>}
                   {showModal ? <Modal selectedMovie={selectedMovie} selectedMovieTrailerKey={selectedMovieTrailerKey} toggleModal={this.toggleModal}/> : null}
                 </section>
               } />
-            {/* <Route path="/about" element={<About />}/> */}
+            <Route path="/about" element={<About />}/>
+            <Route path="/search" element={
+              <section>
+                {loaded ? <MovieSection data={!searchField ? [] : filteredMovies} toggleModal={this.toggleModal} header={'Find movies...'}/> : <h1>Loading</h1>}
+                {showModal ? <Modal selectedMovie={selectedMovie} selectedMovieTrailerKey={selectedMovieTrailerKey} toggleModal={this.toggleModal}/> : null}
+              </section>
+            } />
         </Routes>
       </main>
 

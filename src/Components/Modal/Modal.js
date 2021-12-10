@@ -10,8 +10,8 @@ const Modal = ({ selectedMovie, toggleModal, selectedMovieTrailerKey }) => {
   const movieTrailer = `https://www.youtube.com/watch?v=${selectedMovieTrailerKey}`
 
   return (
-    <div className='modal'>
-        <button className='close-modal' onClick={() => toggleModal() }><img src="../x_icon.png" /></button>
+    <div className='modal' onClick={(e) => e.target.classList.contains('modal') ? toggleModal() : console.log(e.target.classList)}>
+        <button className='close-modal' onClick={toggleModal}><img src="../x_icon.png" /></button>
         <div className='modal_content'>
           <section className='modal-info'>
             <h2>{selectedMovie.title}</h2>
