@@ -1,11 +1,10 @@
 .movie-container {
     display: flex;
     justify-content: center;
-    padding: 20px;
-    margin: 0px 75px 0px 75px;
+    // padding: 20px;
     display: grid;
-    grid-template-columns: repeat(auto-fill, 200px);
-    grid-gap: 25px;
+    grid-template-columns: repeat(auto-fill, 258px);
+    grid-gap: 20px;
     color: lightgray;
 
 }
@@ -13,8 +12,26 @@
 .movie-section {
     display: flex;
     flex-direction: column;
-    h2 {
-        margin-left: 100px;
-        color: white;
+    .movie-section-header {
+        display: flex;
+        h2 {
+            margin-top: 35px;
+            margin-left: 35px;
+            color: white;
+            min-width: 130px;
+        }
+        .genres {
+            margin-top: 34px;
+            color: lightgray;
+            padding: 0px 0px 0px 20px;
+            li {
+                font-size: 14px;
+                list-style: none;
+                display: inline-block;
+                margin: 10px;
+            }
+        }
     }
+
+    
 }
