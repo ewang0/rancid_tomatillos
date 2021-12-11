@@ -4,11 +4,19 @@ import ReactStars from 'react-stars';
 import './react-carousel.scss';
 import { getSingleMovie } from '../../apiCalls';
 import { Carousel } from 'react-responsive-carousel';
+import { useTransition, animated, config } from 'react-spring';
 
 const Banner = ({ data }) => {
+    const transition = useTransition(true, {
+        from: { opacity: 0 },
+        enter: { opacity: 1 },
+        leave: { opacity: 0 },
+        config: config.default,
+      })
     const randomBanners = data.map((movieObj) => {
-        return (
-                <section className="banner">
+        return transition(
+            (style) =>
+              <animated.div style={style} className="banner">
                     <div className="banner-info">
                         <h2>{movieObj.title}</h2>
                         <div className='ratingsContainer'>
@@ -21,7 +29,7 @@ const Banner = ({ data }) => {
                         <img src={movieObj.backdrop_path}/>
                         <div className="banner-image-overlay"></div>
                     </div>
-                </section>
+                </animated.div>
             )
     })
 
