@@ -4,13 +4,22 @@ import ReactStars from 'react-stars';
 import ReactPlayer from "react-player"
 import { getSingleMovieTrailer } from '../../apiCalls';
 import { mockComponent } from 'react-dom/test-utils';
+import { useTransition, animated, config } from 'react-spring';
 
 const Modal = ({ selectedMovie, toggleModal, selectedMovieTrailerKey }) => {
 
   const movieTrailer = `https://www.youtube.com/watch?v=${selectedMovieTrailerKey}`
 
-  return (
-    <div className='modal' onClick={(e) => e.target.classList.contains('modal') ? toggleModal() : console.log(e.target.classList)}>
+  const transition = useTransition(true, {
+    from: { opacity: 0 },
+    enter: { opacity: 1 },
+    leave: { opacity: 0 },
+    config: config.default,
+  })
+
+  return transition(
+    (style) =>
+      <animated.div style={style} className='modal' onClick={(e) => e.target.classList.contains('modal') ? toggleModal() : console.log(e.target.classList)}>
         <button className='close-modal' onClick={toggleModal}><img src="../x_icon.png" /></button>
         <div className='modal_content'>
           <section className='modal-info'>
@@ -33,7 +42,7 @@ const Modal = ({ selectedMovie, toggleModal, selectedMovieTrailerKey }) => {
           <ReactPlayer className='react-player' url={movieTrailer} light={selectedMovie.backdrop_path} controls='true' />
           {/* <img src={selectedMovie.backdrop_path}/> */}
         </div>
-      </div>
+      </animated.div>
   )
 }
 

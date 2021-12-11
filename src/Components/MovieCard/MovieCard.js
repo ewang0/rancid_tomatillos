@@ -1,6 +1,6 @@
 import React from 'react';
 import './MovieCard.scss';
-import ReactStars from 'react-stars'
+import ReactStars from 'react-stars';
 
 const formatTitle = (title) => {
   if(title.length > 33) {
@@ -25,7 +25,7 @@ const MovieCard = ({id, poster_path, title, average_rating, release_date, toggle
             </div>
           </div>
         </div>
-    )
+        )
 }
 
 export default MovieCard;

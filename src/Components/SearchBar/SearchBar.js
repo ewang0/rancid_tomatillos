@@ -4,7 +4,6 @@ import { NavLink, useLocation } from 'react-router-dom';
 
 const SearchBar = (props) => {
     const currentPath = useLocation().pathname === '/' ? '/search' : '/'
-    console.log(currentPath)
 
 	return (
 	<form className="searchContainer" action="/" method="get">
