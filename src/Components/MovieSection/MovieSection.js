@@ -2,8 +2,16 @@ import React from 'react';
 import './MovieSection.scss'
 import MovieCard from '../MovieCard/MovieCard';
 import './MovieSection.js';
+import { useTransition, animated, config } from 'react-spring';
 
 const MovieSection = ({data, toggleModal, header}) => {
+    const transition = useTransition(true, {
+        from: { opacity: 0 },
+        enter: { opacity: 1 },
+        leave: { opacity: 0 },
+        delay: 100,
+        config: config.molasses,
+    })
     const createCards = data.map(movie => {
         return (
         <MovieCard
@@ -18,10 +26,9 @@ const MovieSection = ({data, toggleModal, header}) => {
         )
 })
 
-// const createCards = console.log(data);
-
-return (
-    <section className='movie-section'>
+  return transition(
+    (style) =>
+      <animated.div style={style} className='movie-section'>
         <span className='movie-section-header'>
             <h2>{header}</h2>
             <ul className='genres'>
@@ -45,7 +52,7 @@ return (
         <div className='movie-container'>
             {createCards}
         </div>
-    </section>
+    </animated.div>
 )
    
 
