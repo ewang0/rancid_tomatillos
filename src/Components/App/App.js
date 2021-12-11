@@ -15,6 +15,7 @@ class App extends Component {
     super();
     this.state = {
       movieData: [],
+      detailedMovieData: [],
       error: '',
       showModal: false,
       selectedMovie: {},
@@ -28,10 +29,23 @@ class App extends Component {
     getAllMovies()
       .then(data => {
         const movieData = data.movies;
-        this.setState({ movieData }) 
+        this.setState({ movieData });
+      })
+      .then(() => {
+        const detailedMovies = [];
+        this.state.movieData.forEach((movie) => {
+          getSingleMovie(movie.id)
+            .then(data => {
+              detailedMovies.push(data.movie)
+            })
+            .then(() => {
+              this.setState({ detailedMovieData: detailedMovies})
+            })
+        })
       })
       .catch(error => this.setState({ error: 'Error fetching data'}))
       .finally(() => this.setState({loaded: true}))
+      
   }
 
   toggleModal = (id) => {
@@ -52,6 +66,7 @@ class App extends Component {
     }
   }
 
+
   render() {
     const { movieData, searchField, selectedMovie, selectedMovieTrailerKey, loaded, showModal } = this.state;
     const filteredMovies = movieData.filter(movie => (
@@ -64,7 +79,7 @@ class App extends Component {
         <Routes>
             <Route path="/" element={      
                 <section>
-                  <Banner />
+                  <Banner data={this.state.detailedMovieData.sort((a,b) => 0.5-Math.random())}/>
                   {loaded ? <MovieSection data={movieData} toggleModal={this.toggleModal} header={'All Movies'}/> : <h1>Loading</h1>}
                   {showModal ? <Modal selectedMovie={selectedMovie} selectedMovieTrailerKey={selectedMovieTrailerKey} toggleModal={this.toggleModal}/> : null}
                 </section>
