@@ -1,31 +1,53 @@
 import React from 'react';
 import './Banner.scss';
 import ReactStars from 'react-stars';
+import './react-carousel.scss';
+import { getSingleMovie } from '../../apiCalls';
+import { Carousel } from 'react-responsive-carousel';
 
-class Banner extends React.Component {
-    constructor() {
-        super();
-        this.state = {};
-    }
-
-    render() {
-        return(
-            <section className="banner">
-                <div className="banner-info">
-                    <h2>Movie Title</h2>
-                    <div className='ratingsContainer'>
-                        <ReactStars count={5} value={this.state.rating / 2} size={15} color2={'lightgrey'} />
+const Banner = ({ data }) => {
+    const randomBanners = data.map((movieObj) => {
+        return (
+                <section className="banner">
+                    <div className="banner-info">
+                        <h2>{movieObj.title}</h2>
+                        <div className='ratingsContainer'>
+                            <ReactStars count={5} value={movieObj.average_rating / 2} size={15} color2={'lightgrey'} />
+                        </div>
+                        <p>{movieObj.overview}</p>
+                        <p>{movieObj.runtime}</p>
                     </div>
-                    <p>Some overview that is full of buzzwords to attempt to entice you to watch this movie! Explosions! Drama! True love! Robots! A cute dog!</p>
-                    <p>139 Minutes</p>
-                </div>
-                <div className="banner-image-wrapper">
-                    <img src="https://image.tmdb.org/t/p/original//zzWGRw277MNoCs3zhyG3YmYQsXv.jpg"/>
-                    <div className="banner-image-overlay"></div>
-                </div>
-            </section>
-        )
-    }
+                    <div className="banner-image-wrapper">
+                        <img src={movieObj.backdrop_path}/>
+                        <div className="banner-image-overlay"></div>
+                    </div>
+                </section>
+            )
+    })
+
+    return(
+        <Carousel showArrows={true}>
+            {randomBanners}
+        </Carousel>
+        
+    )
 }
 
 export default Banner;
+
+// return (
+//     <section className="banner">
+//         <div className="banner-info">
+//             <h2>{movieObj.title}</h2>
+//             <div className='ratingsContainer'>
+//                 <ReactStars count={5} value={movieObj.average_rating / 2} size={15} color2={'lightgrey'} />
+//             </div>
+//             <p>{movieObj.overview}</p>
+//             <p>{movieObj.runtime}</p>
+//         </div>
+//         <div className="banner-image-wrapper">
+//             <img src={movieObj.backdrop_path}/>
+//             <div className="banner-image-overlay"></div>
+//         </div>
+//     </section>
+// )
