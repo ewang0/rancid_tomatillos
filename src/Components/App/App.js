@@ -34,21 +34,25 @@ class App extends Component {
       .then(() => {
         const detailedMovies = [];
         this.state.movieData.forEach((movie) => {
-          getSingleMovie(movie.id)
-            .then(data => {
-              detailedMovies.push(data.movie)
-            })
-            .then(() => {
-              this.setState({ detailedMovieData: detailedMovies})
-            })
-            .then(() => {
-              this.addGenres()
-            })
+          //remove bad API data
+          if(!(movie.id === 585244) &&
+            !(movie.id === 737173) &&
+            !(movie.id === 737799)) {
+              getSingleMovie(movie.id)
+              .then(data => {
+                detailedMovies.push(data.movie)
+              })
+              .then(() => {
+                this.setState({ detailedMovieData: detailedMovies })
+              })
+              .then(() => {
+                this.addGenres()
+              })
+            }
+          })
         })
-      })
-      .catch(error => this.setState({ error: 'Error fetching data'}))
-      .finally(() => this.setState({loaded: true}))
-      
+        .catch(error => this.setState({ error: 'Error fetching data'}))
+        .finally(() => this.setState({loaded: true}))   
   }
 
   toggleModal = (id) => {
@@ -106,7 +110,7 @@ class App extends Component {
         <Routes>
             <Route path="/" element={      
                 <section>
-                  <Banner data={this.state.detailedMovieData.sort((a,b) => 0.5-Math.random())}/>
+                  <Banner data={this.state.detailedMovieData}/>
                   {loaded ? <MovieSection data={newArray} detailedData={detailedMovieData} toggleModal={this.toggleModal} filterByGenre={this.filterByGenre} header={'All Movies'}/> : <h1>Loading</h1>}
                   {showModal ? <Modal selectedMovie={selectedMovie} selectedMovieTrailerKey={selectedMovieTrailerKey} toggleModal={this.toggleModal}/> : null}
                 </section>

@@ -11,7 +11,7 @@ const SearchBar = (props) => {
         <label htmlFor="header-search">
             <span className="visually-hidden">Search Movies</span>
         </label>
-        <NavLink to='/search'><img className="icon" src="https://www.svgrepo.com/show/146074/magnifying-glass.svg"/></NavLink>
+        <NavLink to='/search'><img className="icon" src="./search.svg"/></NavLink>
         <input
             className={ currentPath === '/search' ? 'searchBar show' : 'searchBar' }
             type="text"

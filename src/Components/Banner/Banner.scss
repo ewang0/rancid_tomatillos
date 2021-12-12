@@ -10,15 +10,15 @@
 
 .banner-image-wrapper {
     position: relative;
-    margin-top: 4px;
     img {
         height: 450px;
     }
 }
 
 .banner-info {
+    position: relative;
     color: white;
-    margin: 125px;
+    margin: 0px 125px 0px 125px;
 }
 
 .banner-image-overlay {

@@ -11,20 +11,23 @@
 }
 
 .searchContainer {
+	position: absolute;
+	right: 0;
 	@include mixin.flexbox(row, center, center);
 	border-radius: 15px;
 	background-color: #494949;
 	overflow: hidden;
 	transition: ease 0.3s;
-	height: 30px;
+	height: 35px;
+	margin-right: 35px;
 }
 
 .searchContainer:hover {
-	border: 1px solid #ffffff;
+	border: 1px solid #a3a3a3;
 	transform: scale(1.02);
 		
 	input::placeholder{
-		color: rgb(207, 207, 207);
+		color: rgb(185, 185, 185);
 		transition: ease 0.3s;
 	}
 
@@ -32,13 +35,13 @@
 
 .searchBar {
 	width: 0px;
-	height: 28px;
+	height: 30px;
 	border-style: none;
 	border-color: none;
 	color: #eaeaea;
 	transition: 0.5s;
 	text-indent: 10px;
-	font-size: 18px;
+	font-size: 16px;
 	transition: width ease 0.3s;
 	background-color:#494949;
 
@@ -46,17 +49,15 @@
 
 .searchBar.show {
 	width: 200px;
-
 }
 
 .icon {
 	height: 20px;
 	filter: brightness(0.25);
-	filter: invert(60%);
+	filter: invert(20%);
 	transform: rotateY(180deg);
 	cursor: pointer;
-	margin-top: 4px;
-	margin-left: 4px;
+	margin: 10px 6px 5px 10px;
 	overflow: hidden;
 	transition: ease 0.7s;
 	transform: rotate(0deg);
@@ -64,7 +65,7 @@
 
 .icon:hover {
 	filter: brightness(0.25);
-	filter: invert(100%);
+	filter: invert(0%);
 	transform: rotate(360deg);
 }
 
@@ -80,6 +81,6 @@ input:-webkit-autofill,
 input:-webkit-autofill:hover, 
 input:-webkit-autofill:focus, 
 input:-webkit-autofill:active  {
-  transition: background-color 5000s;
-  -webkit-text-fill-color: #fff !important;
+	transition: background-color 5000s;
+	-webkit-text-fill-color: #fff !important;
 }
