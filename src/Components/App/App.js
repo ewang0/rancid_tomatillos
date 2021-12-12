@@ -9,7 +9,6 @@ import { getAllMovies, getSingleMovie, getSingleMovieTrailer } from '../../apiCa
 import { Routes, Route, NavLink } from 'react-router-dom'
 
 
-
 class App extends Component {
   constructor() {
     super();
@@ -22,6 +21,7 @@ class App extends Component {
       selectedMovieTrailerKey: {},
       loaded: false,
       searchField: '',
+      currentGenre: '',
     };
   }
 
@@ -45,12 +45,14 @@ class App extends Component {
               .then(() => {
                 this.setState({ detailedMovieData: detailedMovies })
               })
+              .then(() => {
+                this.addGenres()
+              })
             }
+          })
         })
-      })
-      .catch(error => this.setState({ error: 'Error fetching data'}))
-      .finally(() => this.setState({loaded: true}))
-      
+        .catch(error => this.setState({ error: 'Error fetching data'}))
+        .finally(() => this.setState({loaded: true}))   
   }
 
   toggleModal = (id) => {
@@ -71,12 +73,36 @@ class App extends Component {
     }
   }
 
+  addGenres = () => {
+      this.state.movieData.forEach(movie => {
+        this.state.detailedMovieData.forEach(detail => {
+          if(movie.id === detail.id){
+            movie['genres'] = detail.genres
+          }
+        })
+      })
+  }
+
+  filterByGenre = (genre) => {
+    this.setState({ currentGenre: genre })
+  }
+
 
   render() {
-    const { movieData, searchField, selectedMovie, selectedMovieTrailerKey, loaded, showModal } = this.state;
-    const filteredMovies = movieData.filter(movie => (
+    const { movieData, searchField, selectedMovie, selectedMovieTrailerKey, loaded, showModal, detailedMovieData, currentGenre } = this.state;
+    let newArray = movieData;
+
+    if(!currentGenre || currentGenre === 'All Movies'){
+      newArray = movieData
+    } else if(currentGenre) {
+      newArray = movieData.filter(movie => (
+        movie.genres.includes(currentGenre)
+      ))
+    };
+
+    let filteredMovies = newArray.filter(movie => (
       movie.title.toLowerCase().includes(searchField.toLowerCase())
-    ))
+    ));
 
     return (
       <main className="app">
@@ -85,14 +111,14 @@ class App extends Component {
             <Route path="/" element={      
                 <section>
                   <Banner data={this.state.detailedMovieData}/>
-                  {loaded ? <MovieSection data={movieData} toggleModal={this.toggleModal} header={'All Movies'}/> : <h1>Loading</h1>}
+                  {loaded ? <MovieSection data={newArray} detailedData={detailedMovieData} toggleModal={this.toggleModal} filterByGenre={this.filterByGenre} header={'All Movies'}/> : <h1>Loading</h1>}
                   {showModal ? <Modal selectedMovie={selectedMovie} selectedMovieTrailerKey={selectedMovieTrailerKey} toggleModal={this.toggleModal}/> : null}
                 </section>
               } />
             <Route path="/about" element={<About />}/>
             <Route path="/search" element={
               <section>
-                {loaded ? <MovieSection data={!searchField ? [] : filteredMovies} toggleModal={this.toggleModal} header={'Find movies...'}/> : <h1>Loading</h1>}
+                {loaded ? <MovieSection data={!searchField ? [] : filteredMovies} toggleModal={this.toggleModal} filterByGenre={this.filterByGenre} header={'All Movies'}/> : <h1>Loading</h1>}
                 {showModal ? <Modal selectedMovie={selectedMovie} selectedMovieTrailerKey={selectedMovieTrailerKey} toggleModal={this.toggleModal}/> : null}
               </section>
             } />

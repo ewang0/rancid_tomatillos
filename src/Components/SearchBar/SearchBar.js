@@ -3,16 +3,17 @@ import './SearchBar.scss'
 import { NavLink, useLocation } from 'react-router-dom';
 
 const SearchBar = (props) => {
-    const currentPath = useLocation().pathname === '/' ? '/search' : '/'
+    const currentPath = useLocation().pathname;
+    console.log(currentPath)
 
 	return (
 	<form className="searchContainer" action="/" method="get">
         <label htmlFor="header-search">
             <span className="visually-hidden">Search Movies</span>
         </label>
-        <NavLink to={ currentPath }><img className="icon" src="./search.svg"/></NavLink>
+        <NavLink to='/search'><img className="icon" src="./search.svg"/></NavLink>
         <input
-            className={ currentPath === '/' ? 'searchBar show' : 'searchBar' }
+            className={ currentPath === '/search' ? 'searchBar show' : 'searchBar' }
             type="text"
             id="header-search"
             placeholder="Search..."

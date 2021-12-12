@@ -1,10 +1,45 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './MovieSection.scss'
 import MovieCard from '../MovieCard/MovieCard';
 import './MovieSection.js';
 import { useTransition, animated, config } from 'react-spring';
 
-const MovieSection = ({data, toggleModal, header}) => {
+const MovieSection = ({data, toggleModal, header, filterByGenre}) => {
+    const [status, changeStatus] = useState({
+        activeObject: null,
+        objects: [ 
+            { id: 'All Movies' },
+            { id: 'Action' }, 
+            { id: 'Adventure' }, 
+            { id: 'Animation' }, 
+            { id: 'Comedy' }, 
+            { id: 'Crime' }, 
+            { id: 'Drama' }, 
+            { id: 'Family' }, 
+            { id: 'Fantasy' }, 
+            { id: 'History' },
+            { id: 'Horror' },
+            { id: 'Music' },
+            { id: 'Romance' },
+            { id: 'Science Fiction' },
+            { id: 'Thriller' },
+            { id: 'War' },
+        ]
+    })
+
+    const toggleActive = (index) => {
+        changeStatus({ ...status, activeObject: status.objects[index] })
+        filterByGenre(status.objects[index].id)
+    }
+
+    const toggleActiveStyle = (index) => {
+        if(status.objects[index] === status.activeObject) {
+            return `${status.objects[index].id} active`
+        } else {
+            return `${status.objects[index].id} inactive`
+        }
+    }
+
     const transition = useTransition(true, {
         from: { opacity: 0 },
         enter: { opacity: 1 },
@@ -12,6 +47,7 @@ const MovieSection = ({data, toggleModal, header}) => {
         delay: 100,
         config: config.molasses,
     })
+
     const createCards = data.map(movie => {
         return (
         <MovieCard
@@ -21,7 +57,8 @@ const MovieSection = ({data, toggleModal, header}) => {
             average_rating={movie.average_rating}
             poster_path={movie.poster_path}
             release_date={movie.release_date}
-            toggleModal={toggleModal} 
+            toggleModal={toggleModal}
+            genres={movie.genres} 
         />
         )
 })
@@ -30,23 +67,12 @@ const MovieSection = ({data, toggleModal, header}) => {
     (style) =>
       <animated.div style={style} className='movie-section'>
         <span className='movie-section-header'>
-            <h2>{header}</h2>
             <ul className='genres'>
-                <li>ACTION</li>
-                <li>ADVENTURE</li>
-                <li>ANIMATION</li>
-                <li>COMEDY</li>
-                <li>CRIME</li>
-                <li>DRAMA</li>
-                <li>FAMILY</li>
-                <li>FANTASY</li>
-                <li>HISTORY</li>
-                <li>HORROR</li>
-                <li>MUSIC</li>
-                <li>ROMANCE</li>
-                <li>SCI-FI</li>
-                <li>THRILLER</li>
-                <li>WAR</li>
+                {status.objects.map((object, index) => (
+                    <button key={index} className={toggleActiveStyle(index)} onClick={() => toggleActive(index)}>
+                        {object.id}
+                    </button>
+                ))}
             </ul>
         </span>
         <div className='movie-container'>

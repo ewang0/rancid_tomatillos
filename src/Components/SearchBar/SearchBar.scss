@@ -69,6 +69,10 @@
 	transform: rotate(360deg);
 }
 
+.nav-link active {
+	border-bottom: none;
+}
+
 .searchBar:focus {
 	outline-width: 0;
 }

@@ -10,8 +10,19 @@
     // border-radius: 5px;
     overflow: hidden;
 
+    .imgContainer {
+        overflow: hidden;
+        width: 100%;
+    }
+
     img {
         width: 100%;
+        transition: ease 0.1s;
+        box-sizing: border-box;
+    }
+
+    img:hover {
+        transform: scale(1.03);
     }
 
     .cardBottom {
@@ -69,6 +80,6 @@
 }
 
 .card:hover {
-    transform: scale(1.03);
+    transform: scale(1.04);
     box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22); 
 }

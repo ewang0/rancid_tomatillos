@@ -36,29 +36,18 @@ const Banner = ({ data }) => {
             )
     })
 
+const retrieveBanners = () => {
+    if(randomBanners.length === 40){
+        return randomBanners
+    }
+}
+
     return(
         <Carousel showArrows={true} autoPlay={true} interval={3000} infiniteLoop={true} showIndicators={false} showStatus={false} showThumbs={false}>
-            {randomBanners}
+            {retrieveBanners()}
         </Carousel>
         
     )
 }
 
 export default Banner;
-
-// return (
-//     <section className="banner">
-//         <div className="banner-info">
-//             <h2>{movieObj.title}</h2>
-//             <div className='ratingsContainer'>
-//                 <ReactStars count={5} value={movieObj.average_rating / 2} size={15} color2={'lightgrey'} />
-//             </div>
-//             <p>{movieObj.overview}</p>
-//             <p>{movieObj.runtime}</p>
-//         </div>
-//         <div className="banner-image-wrapper">
-//             <img src={movieObj.backdrop_path}/>
-//             <div className="banner-image-overlay"></div>
-//         </div>
-//     </section>
-// )
