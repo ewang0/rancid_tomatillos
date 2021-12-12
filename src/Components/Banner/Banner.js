@@ -36,15 +36,9 @@ const Banner = ({ data }) => {
             )
     })
 
-const retrieveBanners = () => {
-    if(randomBanners.length === 37){
-        return randomBanners
-    }
-}
-
     return(
         <Carousel showArrows={true} autoPlay={true} interval={3000} infiniteLoop={true} showIndicators={false} showStatus={false} showThumbs={false}>
-            {retrieveBanners()}
+            {randomBanners}
         </Carousel>
         
     )
