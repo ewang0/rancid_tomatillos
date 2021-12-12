@@ -46,13 +46,14 @@ class App extends Component {
               .then(() => {
                 this.setState({ detailedMovieData: detailedMovies })
               })
+              .catch(error => this.setState({ error: '404 error fetching single movie data'}))
               .then(() => {
                 this.addGenres()
               })
             }
           })
         })
-        .catch(error => this.setState({ error: '404 error fetching data'}))
+        .catch(error => this.setState({ error: '404 error fetching all movie data'}))
         .finally(() => this.setState({loaded: true}))   
   }
 
