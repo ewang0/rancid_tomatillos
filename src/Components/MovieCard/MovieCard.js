@@ -8,13 +8,15 @@ const formatTitle = (title) => {
     return abbreviatedTitle;
   } else {
     return title;
-  }
+    }
 }
 const MovieCard = ({id, poster_path, title, average_rating, release_date, toggleModal}) => {
     const year = release_date.slice(0,4);
     return (
         <div className='card' onClick={() => toggleModal(id)}>
-          <img src={poster_path}/>
+          <div className="imgContainer">
+            <img src={poster_path}/>
+          </div>
           <div className='cardBottom'>
             <div className='cardInfo'>
               <p className='cardTitle'>{formatTitle(title)}</p>
