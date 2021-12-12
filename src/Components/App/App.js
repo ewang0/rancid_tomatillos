@@ -7,6 +7,7 @@ import Banner from '../Banner/Banner';
 import About from '../About/About';
 import { getAllMovies, getSingleMovie, getSingleMovieTrailer } from '../../apiCalls';
 import { Routes, Route, NavLink } from 'react-router-dom'
+import Error from '../Error/Error';
 
 
 class App extends Component {
@@ -51,7 +52,7 @@ class App extends Component {
             }
           })
         })
-        .catch(error => this.setState({ error: 'Error fetching data'}))
+        .catch(error => this.setState({ error: '404 error fetching data'}))
         .finally(() => this.setState({loaded: true}))   
   }
 
@@ -89,7 +90,7 @@ class App extends Component {
 
 
   render() {
-    const { movieData, searchField, selectedMovie, selectedMovieTrailerKey, loaded, showModal, detailedMovieData, currentGenre } = this.state;
+    const { movieData, searchField, selectedMovie, selectedMovieTrailerKey, loaded, showModal, detailedMovieData, currentGenre, error } = this.state;
     let newArray = movieData;
 
     if(!currentGenre || currentGenre === 'All Movies'){
@@ -106,6 +107,7 @@ class App extends Component {
 
     return (
       <main className="app">
+     { error ? <Error error={error} /> : null}
         <Nav handleChange={(e) => this.setState({searchField:e.target.value})}  />
         <Routes>
             <Route path="/" element={      
