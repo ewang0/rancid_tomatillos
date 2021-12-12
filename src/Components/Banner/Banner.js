@@ -33,9 +33,15 @@ const Banner = ({ data }) => {
             )
     })
 
+const retrieveBanners = () => {
+    if(randomBanners.length === 40){
+        return randomBanners
+    }
+}
+
     return(
         <Carousel showArrows={true}>
-            {randomBanners}
+            {retrieveBanners()}
         </Carousel>
         
     )
