@@ -37,7 +37,7 @@ const Banner = ({ data }) => {
     })
 
 const retrieveBanners = () => {
-    if(randomBanners.length === 40){
+    if(randomBanners.length === 37){
         return randomBanners
     }
 }
