@@ -96,7 +96,7 @@ class App extends Component {
       newArray = movieData
     } else if(currentGenre) {
       newArray = movieData.filter(movie => (
-        movie.genres.includes(currentGenre)
+       movie.genres && movie.genres.includes(currentGenre)
       ))
     };
 

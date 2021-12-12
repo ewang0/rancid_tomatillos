@@ -12,6 +12,7 @@
 .movie-section {
     display: flex;
     flex-direction: column;
+    min-height: 700px;
     .movie-section-header {
         display: flex;
         align-items: center;
