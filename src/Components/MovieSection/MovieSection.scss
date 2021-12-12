@@ -14,24 +14,55 @@
     flex-direction: column;
     .movie-section-header {
         display: flex;
-        h2 {
-            margin-top: 35px;
-            margin-left: 35px;
-            color: white;
-            min-width: 130px;
-        }
+        align-items: center;
+        height: 80px;
         .genres {
-            margin-top: 34px;
             color: lightgray;
-            padding: 0px 0px 0px 20px;
-            li {
-                font-size: 14px;
-                list-style: none;
-                display: inline-block;
-                margin: 10px;
+            padding-inline-start: 10px;
+
+            .All {
+                height: 50px;
+                font-size: 30px;
+                margin: 0px 10px 0px;
             }
+
+            button {
+                position: relative;
+                height: 35px;
+                display: inline-block;
+                border: none;
+                padding: 10px;
+                text-decoration: none;
+                background: none;
+                color: lightgrey;
+                font-size: 1rem;
+                cursor: pointer;
+                text-align: center;
+                transition: 0.3s ease;
+                -webkit-appearance: none;
+                -moz-appearance: none;
+                background-image: linear-gradient(#bababa, #909090);
+                background-size: 0% 0.1em;
+                background-position-y: 100%;
+                background-position-x: 0%;
+                background-repeat: no-repeat;
+                transition: background-size 0.2s ease-in-out;
+                margin: 0px 2px 0px;
+
+            }
+
+            :hover {
+                background-size: 100% 0.1em;
+            }
+
+            .active,
+            :focus {
+                color: lightgreen;
+                background-size: 100% 0.1em;
+                background-image: linear-gradient(#229728, #4bb345);
+            }
+            
         }
     }
-
     
 }
