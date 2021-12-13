@@ -7,7 +7,7 @@ import SearchBar from '../SearchBar/SearchBar';
 const Nav = (props) => {
     return (
         <nav>
-            <img src="./logo.svg"/>
+            <NavLink to="/" clasName='logo'><img src="./logo.svg"/></NavLink>
             <div className="nav-links">
                 <NavLink to="/" className="nav-link">HOME</NavLink>
                 <NavLink to="/about" className="nav-link">ABOUT</NavLink>

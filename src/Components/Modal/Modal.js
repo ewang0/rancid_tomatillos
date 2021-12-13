@@ -10,23 +10,16 @@ const Modal = ({ selectedMovie, toggleModal, selectedMovieTrailerKey }) => {
 
   const movieTrailer = `https://www.youtube.com/watch?v=${selectedMovieTrailerKey}`
 
-  const transition = useTransition(true, {
-    from: { opacity: 0 },
-    enter: { opacity: 1 },
-    leave: { opacity: 0 },
-    config: config.default,
-  })
-
-  return transition(
-    (style) =>
-      <animated.div style={style} className='modal' onClick={(e) => e.target.classList.contains('modal') ? toggleModal() : console.log(e.target.classList)}>
+  return (
+      <div className='modal' onClick={(e) => e.target.classList.contains('modal') ? toggleModal() : console.log(e.target.classList)}>
         <button className='close-modal' onClick={toggleModal}><img src="../x_icon.png" /></button>
         <div className='modal_content'>
           <section className='modal-info'>
             <h2>{selectedMovie.title}</h2>
+
             <span className="ratings-wrapper">
                 <div className='ratingsContainer'>
-                    <ReactStars className='reactStars' count={5} value={selectedMovie.average_rating/2} size={15} color2={'lightgrey'} />
+                    <ReactStars className='reactStars' count={5} value={selectedMovie.average_rating/2} size={15} color2={'#a4c91c'} color1={'#141414'} />
                 </div>
                 <p><b>{(selectedMovie.average_rating/2).toFixed(1)}</b></p>
             </span>
@@ -42,10 +35,9 @@ const Modal = ({ selectedMovie, toggleModal, selectedMovieTrailerKey }) => {
               </tr>
             </table>
           </section>
-          <ReactPlayer className='react-player' url={movieTrailer} light={selectedMovie.backdrop_path} controls='true' />
-          {/* <img src={selectedMovie.backdrop_path}/> */}
+          <ReactPlayer className='react-player' url={movieTrailer} light={selectedMovie.backdrop_path} controls='true' playing='true' />
         </div>
-      </animated.div>
+      </div>
   )
 }
 

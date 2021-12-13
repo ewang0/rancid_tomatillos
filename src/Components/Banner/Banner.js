@@ -14,12 +14,12 @@ const Banner = ({ data }) => {
         enter: { opacity: 1 },
         leave: { opacity: 0 },
         config: config.default,
-      })
-  
+    })
+    
     const randomBanners = shuffledData.map((movieObj) => {
         return transition(
             (style) =>
-              <animated.div style={style} className="banner">
+                <animated.div style={style} className="banner">
                     <div className="banner-info">
                         <h2>{movieObj.title}</h2>
                         <span className="ratings-wrapper">
