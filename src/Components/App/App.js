@@ -26,8 +26,8 @@ class App extends Component {
     };
   }
 
-  componentDidMount = () => {
-    getAllMovies()
+  componentDidMount = async () => {
+    await getAllMovies()
       .then(data => {
         const movieData = data.movies;
         this.setState({ movieData });
@@ -48,7 +48,7 @@ class App extends Component {
               })
               .catch(error => this.setState({ error: '404 error fetching single movie data'}))
               .then(() => {
-                this.addGenres()
+                this.addGenres();
               })
             }
           })
@@ -98,7 +98,7 @@ class App extends Component {
       newArray = movieData
     } else if(currentGenre) {
       newArray = movieData.filter(movie => (
-       movie.genres && movie.genres.includes(currentGenre)
+      movie.genres && movie.genres.includes(currentGenre)
       ))
     };
 

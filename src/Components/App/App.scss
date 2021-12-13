@@ -2,7 +2,9 @@ html, body {
     height: 100%;
     width: 100%;
     margin: 0;
-    background-color: #1D1D1D;
+    background: linear-gradient(#151515, #282828);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     font-family: 'Roboto', sans-serif;
     // font-family: 'Montserrat', sans-serif;
 }
