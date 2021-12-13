@@ -6,7 +6,7 @@ import Modal from '../Modal/Modal.js';
 import Banner from '../Banner/Banner';
 import About from '../About/About';
 import { getAllMovies, getSingleMovie, getSingleMovieTrailer } from '../../apiCalls';
-import { Routes, Route, NavLink } from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom'
 import Error from '../Error/Error';
 
 
@@ -15,7 +15,7 @@ class App extends Component {
     super();
     this.state = {
       movieData: [],
-      detailedMovieData: [],
+      detailedMovies: [],
       error: '',
       showModal: false,
       selectedMovie: {},
@@ -26,35 +26,32 @@ class App extends Component {
     };
   }
 
-  componentDidMount = async () => {
-    await getAllMovies()
+  componentDidMount = () => {
+    getAllMovies()
       .then(data => {
         const movieData = data.movies;
         this.setState({ movieData });
-      })
-      .then(() => {
         const detailedMovies = [];
         this.state.movieData.forEach((movie) => {
-          //remove bad API data
           if(!(movie.id === 585244) &&
             !(movie.id === 737173) &&
             !(movie.id === 737799)) {
               getSingleMovie(movie.id)
               .then(data => {
+                if(data.error){
+                  throw data.error
+                }
                 detailedMovies.push(data.movie)
+                Object.assign(movie, data.movie)
               })
-              .then(() => {
-                this.setState({ detailedMovieData: detailedMovies })
-              })
-              .catch(error => this.setState({ error: '404 error fetching single movie data'}))
-              .then(() => {
-                this.addGenres();
-              })
+              .then(() => {this.setState({ detailedMovies: detailedMovies })})
+              .catch(error => console.log(error))
             }
           })
         })
         .catch(error => this.setState({ error: '404 error fetching all movie data'}))
-        .finally(() => this.setState({loaded: true}))   
+        .finally(() => {
+        this.setState({loaded: true})})
   }
 
   toggleModal = (id) => {
@@ -67,22 +64,16 @@ class App extends Component {
           selectedMovie: data.movie
         })
         getSingleMovieTrailer(id).then(data => {
+          if(data.error){
+            throw data.error
+          }
           this.setState({
             selectedMovieTrailerKey: data.videos.find(video => video.type === 'Trailer').key
           })
         })
+        .catch(error => console.log(error), this.setState({ selectedMovieTrailerKey: 'dQw4w9WgXcQ' }))
       });
     }
-  }
-
-  addGenres = () => {
-      this.state.movieData.forEach(movie => {
-        this.state.detailedMovieData.forEach(detailedMovie => {
-          if(movie.id === detailedMovie.id){
-            movie['genres'] = detailedMovie.genres
-          }
-        })
-      })
   }
 
   filterByGenre = (genre) => {
@@ -91,7 +82,7 @@ class App extends Component {
 
 
   render() {
-    const { movieData, searchField, selectedMovie, selectedMovieTrailerKey, loaded, showModal, detailedMovieData, currentGenre, error } = this.state;
+    const { movieData, searchField, selectedMovie, selectedMovieTrailerKey, loaded, showModal, currentGenre, error, detailedMovies } = this.state;
     let newArray = movieData;
 
     if(!currentGenre || currentGenre === 'All Movies'){
@@ -115,8 +106,8 @@ class App extends Component {
         <Routes>
             <Route path="/" element={      
                 <section>
-                  <Banner data={this.state.detailedMovieData}/>
-                  {loaded ? <MovieSection data={newArray} detailedData={detailedMovieData} toggleModal={this.toggleModal} filterByGenre={this.filterByGenre} header={'All Movies'}/> : <h1>Loading</h1>}
+                  <Banner data={detailedMovies} key={'banner'}/>
+                  {loaded ? <MovieSection data={newArray} detailedData={movieData} toggleModal={this.toggleModal} filterByGenre={this.filterByGenre} header={'All Movies'}/> : <h1>Loading</h1>}
                   {showModal ? <Modal selectedMovie={selectedMovie} selectedMovieTrailerKey={selectedMovieTrailerKey} toggleModal={this.toggleModal}/> : null}
                 </section>
               } />

@@ -7,8 +7,6 @@ import { useTransition, animated, config } from 'react-spring';
 
 const Banner = ({ data }) => {
 
-    const shuffledData = data.sort((a,b) => 0.5-Math.random());
-
     const transition = useTransition(true, {
         from: { opacity: 0 },
         enter: { opacity: 1 },
@@ -16,10 +14,10 @@ const Banner = ({ data }) => {
         config: config.default,
     })
     
-    const randomBanners = shuffledData.map((movieObj) => {
+    const randomBanners = data.map((movieObj) => {
         return transition(
             (style) =>
-                <animated.div style={style} className="banner">
+                <animated.div style={style} className="banner" key={movieObj.id}>
                     <div className="banner-info">
                         <h2>{movieObj.title}</h2>
                         <span className="ratings-wrapper">
@@ -32,7 +30,7 @@ const Banner = ({ data }) => {
                         <p><b>{movieObj.runtime} Minutes</b></p>
                     </div>
                     <div className="banner-image-wrapper">
-                        <img src={movieObj.backdrop_path}/>
+                        <img src={movieObj.backdrop_path} alt={`${movieObj.title}Banner.img`}/>
                         <div className="banner-image-overlay"></div>
                     </div>
                 </animated.div>
