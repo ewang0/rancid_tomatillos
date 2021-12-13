@@ -64,8 +64,7 @@
 }
 
 .icon:hover {
-	filter: brightness(0.25);
-	filter: invert(0%);
+	filter: invert(66%) sepia(99%) saturate(450%) hue-rotate(25deg) brightness(150%) contrast(87%);
 	transform: rotate(360deg);
 }
 
