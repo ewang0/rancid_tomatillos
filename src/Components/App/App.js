@@ -77,9 +77,9 @@ class App extends Component {
 
   addGenres = () => {
       this.state.movieData.forEach(movie => {
-        this.state.detailedMovieData.forEach(detail => {
-          if(movie.id === detail.id){
-            movie['genres'] = detail.genres
+        this.state.detailedMovieData.forEach(detailedMovie => {
+          if(movie.id === detailedMovie.id){
+            movie['genres'] = detailedMovie.genres
           }
         })
       })
@@ -98,7 +98,9 @@ class App extends Component {
       newArray = movieData
     } else if(currentGenre) {
       newArray = movieData.filter(movie => (
-      movie.genres && movie.genres.includes(currentGenre)
+        movie.genres && movie.genres.includes(currentGenre)
+
+
       ))
     };
 
@@ -108,7 +110,7 @@ class App extends Component {
 
     return (
       <main className="app">
-     { error ? <Error error={error} /> : null}
+      { error ? <Error error={error} /> : null}
         <Nav handleChange={(e) => this.setState({searchField:e.target.value})}  />
         <Routes>
             <Route path="/" element={      

@@ -82,7 +82,7 @@ const MovieSection = ({data, toggleModal, header, filterByGenre}) => {
             {createCards}
         </div>
     </animated.div>
-    )
+  )
 }
 
 export default MovieSection;

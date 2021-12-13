@@ -22,9 +22,12 @@ const Banner = ({ data }) => {
                 <animated.div style={style} className="banner">
                     <div className="banner-info">
                         <h2>{movieObj.title}</h2>
-                        <div className='ratingsContainer'>
-                            <ReactStars count={5} value={movieObj.average_rating / 2} size={15} color2={'lightgrey'} />
-                        </div>
+                        <span className="ratings-wrapper">
+                            <div className='ratingsContainer'>
+                                <ReactStars className='reactStars' count={5} value={movieObj.average_rating/2} size={15} color2={'lightgrey'} />
+                            </div>
+                            <p><b>{(movieObj.average_rating/2).toFixed(1)}</b></p>
+                        </span>
                         <p>{movieObj.overview}</p>
                         <p><b>{movieObj.runtime} Minutes</b></p>
                     </div>
