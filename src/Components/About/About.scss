@@ -1,0 +1,45 @@
+.about-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    h1 {
+        margin: 60px;
+    }
+    article {
+        margin-bottom: 60px;
+    }
+}
+
+.profile-image {
+    height: 350px;
+    width: 350px;
+    background-color: lightgray;
+}
+
+.placeholder-box {
+    height: 350px;
+    width: 350px;
+    background-color: lightgray;
+}
+
+.profile-text {
+    display: flex;
+    flex-direction: column;
+    width: 450px;
+    margin-right: 60px;
+    margin-left: 60px;
+    h2 {
+        margin-bottom: 0;
+    }
+}
+
+.eddie {
+    display: flex;
+    margin-right: 150px;
+}
+
+.eric {
+    display: flex;
+    margin-left: 150px;
+}
