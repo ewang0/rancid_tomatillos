@@ -19,7 +19,7 @@ const Modal = ({ selectedMovie, toggleModal, selectedMovieTrailerKey }) => {
 
             <span className="ratings-wrapper">
                 <div className='ratingsContainer'>
-                    <ReactStars className='reactStars' count={5} value={selectedMovie.average_rating/2} size={15} color2={'#a4c91c'} color1={'#141414'} />
+                    <ReactStars className='reactStars' count={5} value={selectedMovie.average_rating/2} size={15} color2={'#a4c91c'} color1={'#5c5c5c'} />
                 </div>
                 <p><b>{(selectedMovie.average_rating/2).toFixed(1)}</b></p>
             </span>
@@ -27,11 +27,11 @@ const Modal = ({ selectedMovie, toggleModal, selectedMovieTrailerKey }) => {
             <table>
               <tr>
                 <th>Budget</th>
-                <th>${selectedMovie.budget}</th>
+                <th className="table-value">${selectedMovie.budget}</th>
               </tr>
               <tr>
                 <th>Revenue</th>
-                <th>${selectedMovie.revenue}</th>
+                <th className="table-value">${selectedMovie.revenue}</th>
               </tr>
             </table>
           </section>

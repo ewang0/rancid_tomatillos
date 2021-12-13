@@ -24,7 +24,7 @@ const Banner = ({ data }) => {
                         <h2>{movieObj.title}</h2>
                         <span className="ratings-wrapper">
                             <div className='ratingsContainer'>
-                                <ReactStars className='reactStars' count={5} value={movieObj.average_rating/2} size={15} color2={'lightgrey'} />
+                                <ReactStars className='reactStars' count={5} value={movieObj.average_rating/2} size={15} color2={'#a4c91c'} color1={'#5c5c5c'}/>
                             </div>
                             <p><b>{(movieObj.average_rating/2).toFixed(1)}</b></p>
                         </span>

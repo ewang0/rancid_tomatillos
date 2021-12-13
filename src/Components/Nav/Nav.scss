@@ -5,9 +5,11 @@ nav {
     height: 90px;
     background-color: transparent;
     color: white;
+    img {
+        margin-left: 35px;
+    }
     @include mixin.flexbox(0, 0, center);
     .logo {
-        margin-left: 35px;
         height: 60px;
     }
     .nav-links {

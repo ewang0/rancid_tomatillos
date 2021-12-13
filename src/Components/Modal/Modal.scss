@@ -74,11 +74,18 @@
     }
   }
   
+  table {
+    th {
+      font-weight: normal;
+      text-align: left;
+    }
 
-  th {
-    font-weight: normal;
-    text-align: left;
+    .table-value {
+      padding-left: 15px;
+    }
   }
+
+
 
   .react-player {
     margin-right: 60px;
