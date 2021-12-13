@@ -63,25 +63,23 @@ const MovieSection = ({data, toggleModal, header, filterByGenre}) => {
         )
 })
 
-  return transition(
-    (style) =>
-      <animated.div style={style} className='movie-section'>
-        <span className='movie-section-header'>
-            <ul className='genres'>
-                {status.objects.map((object, index) => (
-                    <button key={index} className={toggleActiveStyle(index)} onClick={() => toggleActive(index)}>
-                        {object.id}
-                    </button>
-                ))}
-            </ul>
-        </span>
-        <div className='movie-container'>
-            {createCards}
-        </div>
-    </animated.div>
-)
-   
-
+return transition(
+        (style) =>
+        <animated.div style={style} className='movie-section'>
+            <span className='movie-section-header'>
+                <ul className='genres'>
+                    {status.objects.map((object, index) => (
+                        <button key={index} className={toggleActiveStyle(index)} onClick={() => toggleActive(index)}>
+                            {object.id}
+                        </button>
+                    ))}
+                </ul>
+            </span>
+            <div className='movie-container'>
+                {createCards}
+            </div>
+        </animated.div>
+    )
 }
 
 export default MovieSection;
