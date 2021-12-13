@@ -22,9 +22,12 @@ const MovieCard = ({id, poster_path, title, average_rating, release_date, toggle
               <p className='cardTitle'>{formatTitle(title)}</p>
               <p className='cardYear'>{year}</p>
             </div>
-            <div className='ratingsContainer'>
-              <ReactStars className='reactStars' count={5} value={average_rating / 2} size={15} color2={'lightgrey'} />
-            </div>
+            <span className="ratings-wrapper">
+              <div className='ratingsContainer'>
+                <ReactStars className='reactStars' count={5} value={average_rating/2} size={15} color2={'lightgrey'} />
+              </div>
+              <p><b>{(average_rating/2).toFixed(1)}</b></p>
+            </span>
           </div>
         </div>
         )

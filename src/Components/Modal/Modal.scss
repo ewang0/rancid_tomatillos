@@ -27,6 +27,15 @@
   }
 }
 
+.ratings-wrapper {
+  display: flex;
+  align-items: center;
+  p {
+      margin: 0px 0px 6px 10px;
+      font-size: 14px;
+  }
+}
+
 .modal_content {
   position: relative;
   width: 1300px;

@@ -24,9 +24,12 @@ const Modal = ({ selectedMovie, toggleModal, selectedMovieTrailerKey }) => {
         <div className='modal_content'>
           <section className='modal-info'>
             <h2>{selectedMovie.title}</h2>
-            <div className='ratingsContainer'>
-              <ReactStars count={5} value={selectedMovie.average_rating / 2} size={15} color2={'lightgrey'} />
-            </div>
+            <span className="ratings-wrapper">
+                <div className='ratingsContainer'>
+                    <ReactStars className='reactStars' count={5} value={selectedMovie.average_rating/2} size={15} color2={'lightgrey'} />
+                </div>
+                <p><b>{(selectedMovie.average_rating/2).toFixed(1)}</b></p>
+            </span>
             <p>{selectedMovie.overview}</p>
             <table>
               <tr>

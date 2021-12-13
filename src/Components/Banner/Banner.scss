@@ -19,6 +19,9 @@
     position: relative;
     color: white;
     margin: 0px 125px 0px 125px;
+    b {
+
+    }
 }
 
 .banner-image-overlay {
@@ -28,5 +31,14 @@
     height: 450px;
     width: 820px;
     background: linear-gradient(90.06deg, black 2%, rgba(0, 0, 0, 0) 26.63%);
+}
 
+
+.ratings-wrapper {
+    display: flex;
+    align-items: center;
+    p {
+        margin: 1px 0px 0px 10px;
+        font-size: 14px;
+    }
 }
