@@ -15,7 +15,7 @@ const MovieCard = ({id, poster_path, title, average_rating, release_date, toggle
     return (
         <div className='card' onClick={() => toggleModal(id)}>
           <div className="imgContainer">
-            <img src={poster_path}/>
+            <img src={poster_path} alt={`${title}.img`}/>
           </div>
           <div className='cardBottom'>
             <div className='cardInfo'>

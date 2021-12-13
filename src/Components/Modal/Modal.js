@@ -2,9 +2,6 @@ import React from 'react';
 import './Modal.scss';
 import ReactStars from 'react-stars';
 import ReactPlayer from "react-player"
-import { getSingleMovieTrailer } from '../../apiCalls';
-import { mockComponent } from 'react-dom/test-utils';
-import { useTransition, animated, config } from 'react-spring';
 
 const Modal = ({ selectedMovie, toggleModal, selectedMovieTrailerKey }) => {
 
@@ -12,7 +9,7 @@ const Modal = ({ selectedMovie, toggleModal, selectedMovieTrailerKey }) => {
 
   return (
       <div className='modal' onClick={(e) => e.target.classList.contains('modal') ? toggleModal() : console.log(e.target.classList)}>
-        <button className='close-modal' onClick={toggleModal}><img src="../x_icon.png" /></button>
+        <button className='close-modal' onClick={toggleModal}><img src="../x_icon.png" alt='icon.png'/></button>
         <div className='modal_content'>
           <section className='modal-info'>
             <h2>{selectedMovie.title}</h2>
