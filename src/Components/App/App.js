@@ -2,9 +2,10 @@ import React, { Component } from 'react';
 import './App.scss';
 import Nav from '../Nav/Nav';
 import MovieSection from '../MovieSection/MovieSection';
-import Modal from '../Modal/Modal.js';
+import Modal from '../Modal/Modal';
 import Banner from '../Banner/Banner';
 import About from '../About/About';
+import Footer from '../Footer/Footer';
 import { getAllMovies, getSingleMovie, getSingleMovieTrailer } from '../../apiCalls';
 import { Routes, Route, NavLink } from 'react-router-dom'
 import Error from '../Error/Error';
@@ -128,6 +129,7 @@ class App extends Component {
               </section>
             } />
         </Routes>
+        <Footer />
       </main>
 
     );
