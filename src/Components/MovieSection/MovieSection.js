@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import './MovieSection.scss'
 import MovieCard from '../MovieCard/MovieCard';
 import './MovieSection.js';
@@ -63,25 +64,25 @@ const MovieSection = ({data, toggleModal, header, filterByGenre}) => {
         )
 })
 
+    const location = useLocation().pathname;
+
   return transition(
     (style) =>
       <animated.div style={style} className='movie-section'>
         <span className='movie-section-header'>
-            <ul className='genres'>
+            { location === '/search' ? <h1>Search Movies</h1> : <ul className='genres'>
                 {status.objects.map((object, index) => (
                     <button key={index} className={toggleActiveStyle(index)} onClick={() => toggleActive(index)}>
                         {object.id}
                     </button>
                 ))}
-            </ul>
+            </ul> }
         </span>
         <div className='movie-container'>
             {createCards}
         </div>
     </animated.div>
-)
-   
-
+    )
 }
 
 export default MovieSection;
