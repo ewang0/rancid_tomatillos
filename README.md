@@ -4,7 +4,7 @@
 
 ## Contents
 1. [Overview and Goals](#Overview)
-2. [Wins and Challenges](#Wins and Challenges)
+2. [Wins and Challenges](#Wins)
 3. [Technologies](#Technologies)
 4. [Project Demo](#Demo)
 ---
