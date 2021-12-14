@@ -1,6 +1,7 @@
 # Rancid Tomatillos
 
 > A 2-week pair project by Eric Wang and Eddie Krupicka
+
 ![rancid gif1](https://user-images.githubusercontent.com/87143658/145930672-69b74e87-ea98-4500-8d26-a9ed23b04606.gif)
 
 ## Contents
