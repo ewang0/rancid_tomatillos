@@ -1,3 +1,5 @@
+@use "src/mixins.scss" as mixin;
+
 .modal {
   position: fixed;
   top: 0;
@@ -7,9 +9,7 @@
   border-radius: 10px;
   height: 100%;
   width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include mixin.flexbox(0, center, center);
   animation: fadeIn 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
 
   @keyframes fadeIn {
@@ -54,9 +54,7 @@
   min-height: 500px;
   color: white;
   background: #1b1b1b;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  @include mixin.flexbox(0, space-between, center);
   background-image: linear-gradient(315deg, #151515 0%, #282828 74%);
   box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
   border-radius: 10px;

@@ -1,14 +1,14 @@
+@use "src/mixins.scss" as mixin;
+
 .error {
   position: fixed;
   top: 0;
   left: 0;
   z-index: 3;
-  background-color: rgba(0, 0, 0);
+  background-color: black;
   height: 100%;
   width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include mixin.flexbox(0, center, center);
 	color: lightgray;
 	pointer-events: none;
 }

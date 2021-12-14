@@ -1,7 +1,8 @@
+@use "src/mixins.scss" as mixin;
+
 .banner {
     position:relative;
-    display: flex;
-    align-items: center;
+    @include mixin.flexbox(0, 0, center);
     width: 100%;
     height: 450px;
     background-color: black;
@@ -32,8 +33,7 @@
 
 
 .ratings-wrapper {
-    display: flex;
-    align-items: center;
+    @include mixin.flexbox(0, 0, center);
     p {
         margin: 1px 0px 0px 10px;
         font-size: 14px;

@@ -1,7 +1,7 @@
+@use "src/mixins.scss" as mixin;
+
 .movie-container {
-    display: flex;
-    justify-content: center;
-    // padding: 20px;
+    @include mixin.flexbox(0, center, 0);
     display: grid;
     grid-template-columns: repeat(auto-fill, 258px);
     grid-gap: 20px;
@@ -10,12 +10,10 @@
 }
 
 .movie-section {
-    display: flex;
-    flex-direction: column;
+    @include mixin.flexbox(column, 0, 0);
     min-height: 700px;
     .movie-section-header {
-        display: flex;
-        align-items: center;
+        @include mixin.flexbox(0, 0, center);
         height: 80px;
         h1 {
             margin-left: 35px;
