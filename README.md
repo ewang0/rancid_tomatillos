@@ -4,7 +4,7 @@
 
 ## Contents
 1. [Overview and Goals](#Overview)
-2. [Wins and Challenges](#Wins)
+2. [Wins and Challenges](#Wins-and-Challenges)
 3. [Technologies](#Technologies)
 4. [Project Demo](#Demo)
 ---
@@ -16,6 +16,7 @@ Rancid Tomatillos is a Module 3 project in Turing School of Software and Design'
 Design, usability, and accessibilty were important to us in this project. Our designs lived in a Figma file, and we did careful planning and prototyping in Figma before we did any coding. Below is an example of how the main page of our application evolved over several iterations:
 
 ![rancid iterations](https://user-images.githubusercontent.com/87143658/145927726-e13b4633-98ed-4ca0-8d50-844e0c826ba4.png)
+
 
 ## Wins and Challenges
 
@@ -31,6 +32,7 @@ Wins
 - Reaching compromise respectfully when disagreements over design or code architecture arose
 - Embedding video within our site
 
+
 ## Goals
 
 The project's goals, listed below in an abbreviated form, are taken directly from the Turing project write-up:
@@ -44,6 +46,7 @@ The project's goals, listed below in an abbreviated form, are taken directly fro
 - Exceptionally well-factored code with little or no duplication. The business-logic code driving functionality is cleanly separated from rendering, view-related code. Excellent usage of fetch and updates DOM based on results of network requests. Handles all scenarios for error handling.
 ```
 
+
 ## Technologies
 
   - React
@@ -56,6 +59,7 @@ The project's goals, listed below in an abbreviated form, are taken directly fro
   - Git
   - Figma
   - Fetch API
+
 
 ## Demo
 
