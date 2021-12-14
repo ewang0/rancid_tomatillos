@@ -3,9 +3,10 @@
 > A 2-week pair project by Eric Wang and Eddie Krupicka
 
 ## Contents
-1. [Overview and Goals](#overview)
-1. [Technologies](#technologies)
-1. [Project Demo](#Demo)
+1. [Overview and Goals](#Overview)
+2. [Wins and Challenges](#Wins and Challenges)
+3. [Technologies](#Technologies)
+4. [Project Demo](#Demo)
 ---
 
 ## Overview
@@ -15,6 +16,20 @@ Rancid Tomatillos is a Module 3 project in Turing School of Software and Design'
 Design, usability, and accessibilty were important to us in this project. Our designs lived in a Figma file, and we did careful planning and prototyping in Figma before we did any coding. Below is an example of how the main page of our application evolved over several iterations:
 
 ![rancid iterations](https://user-images.githubusercontent.com/87143658/145927726-e13b4633-98ed-4ca0-8d50-844e0c826ba4.png)
+
+##Wins and Challenges
+
+Challenges
+- Learning React, Router, and Cypress while building this application involved a lot of self-teaching and research
+- Working with React state, props, hooks, and asynchronous JavaScript
+- Filtering movies by genre
+- Remembering to sleep and stay hydrated
+
+Wins
+- Designing a modern, user-friendly, and accessible website
+- Working independently while keeping a consistent and clear line of communication through Slack and our project board
+- Reaching compromise respectfully when disagreements over design or code architecture arose
+- Embedding video within our site
 
 ## Goals
 
@@ -31,7 +46,6 @@ The project's goals, listed below in an abbreviated form, are taken directly fro
 
 ## Technologies
 
-  - Command-line interface
   - React
   - Router
   - Cypress
