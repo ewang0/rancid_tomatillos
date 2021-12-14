@@ -1,8 +1,12 @@
 # Rancid Tomatillos
 
-> A 2-week pair project by Eric Wang and Eddie Krupicka
+> A 2-week pair project by Eric Wang and Eddie Krupicka!
 
-![rancid gif1](https://user-images.githubusercontent.com/87143658/145930672-69b74e87-ea98-4500-8d26-a9ed23b04606.gif)
+[Uploading Screen Shot 2021-12-13 at 11.15.23 PM.png…]()
+
+<img width="1437" alt="Screen Shot 2021-12-13 at 11 15 46 PM" src="https://user-images.githubusercontent.com/87143658/145932197-8a5904c8-f2c6-4811-8949-1489b0c08df5.png">
+
+<img width="1437" alt="Screen Shot 2021-12-13 at 11 17 09 PM" src="https://user-images.githubusercontent.com/87143658/145932218-dd5fdafc-033e-49be-89dc-55db603ed7bc.png">
 
 ## Contents
 1. [Overview and Goals](#Overview)
@@ -32,8 +36,7 @@ Wins
 - Designing a modern, user-friendly, and accessible website
 - Working independently while keeping a consistent and clear line of communication through Slack and our project board
 - Reaching compromise respectfully when disagreements over design or code architecture arose
-- Embedding video within our site
-
+- Embedding video within our site:
 
 ## Goals
 
