@@ -12,13 +12,12 @@
 <img width="1437" alt="Screen Shot 2021-12-13 at 11 17 09 PM" src="https://user-images.githubusercontent.com/87143658/145932218-dd5fdafc-033e-49be-89dc-55db603ed7bc.png">
 
 ## Contents
-- [Rancid Tomatillos](#rancid-tomatillos)
-	- [Contents](#contents)
-	- [Overview](#overview)
-	- [Wins and Challenges](#wins-and-challenges)
-	- [Goals](#goals)
-	- [Technologies](#technologies)
-	- [Demo](#demo)
+
+1. [Overview](#overview)
+2. [Wins and Challenges](#wins-and-challenges)
+3. [Goals](#goals)
+4. [Technologies](#technologies)
+5. [Demo](#demo)
 ---
 
 ## Overview
@@ -42,7 +41,7 @@ Wins
 - Designing a modern, user-friendly, and accessible website
 - Working independently while keeping a consistent and clear line of communication through Slack and our project board
 - Reaching compromise respectfully when disagreements over design or code architecture arose
-- Embedding video within our site:
+- Embedding video within our site
 
 ## Goals
 
