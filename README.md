@@ -17,7 +17,7 @@ Design, usability, and accessibilty were important to us in this project. Our de
 
 ![rancid iterations](https://user-images.githubusercontent.com/87143658/145927726-e13b4633-98ed-4ca0-8d50-844e0c826ba4.png)
 
-##Wins and Challenges
+## Wins and Challenges
 
 Challenges
 - Learning React, Router, and Cypress while building this application involved a lot of self-teaching and research
