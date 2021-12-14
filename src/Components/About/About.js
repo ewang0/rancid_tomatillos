@@ -1,9 +1,19 @@
 import React from 'react'
 import './About.scss'
+import { useTransition, animated, config } from 'react-spring';
 
 const About = () => {
-    return(
-        <section className="about-container">
+    const transition = useTransition(true, {
+        from: { opacity: 0 },
+        enter: { opacity: 1 },
+        leave: { opacity: 0 },
+        delay: 100,
+        config: config.molasses,
+    })
+
+    return transition(
+        (style) =>
+          <animated.section style={style} className="about-container">
             <h1>TEAM</h1>
             <article className="eddie">
                 <img src='./eddie-profile.jpg' className="profile-image"></img>
@@ -23,7 +33,7 @@ const About = () => {
                 <div className="placeholder-box"></div>
             </article>
             
-        </section>
+        </animated.section>
     )
 }
 
