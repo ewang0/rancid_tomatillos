@@ -1,70 +1,56 @@
-# Getting Started with Create React App
+# Rancid Tomatillos
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+> A 2-week pair project by Eric Wang and Eddie Krupicka
+<img width="1437" alt="Screen Shot 2021-11-17 at 12 22 44 PM" src="https://user-images.githubusercontent.com/87143658/142277177-f95f03e6-93e0-4c17-8034-c0daa498a7d2.png">
 
-## Available Scripts
 
-In the project directory, you can run:
+## Contents
+1. [Overview and Goals](#overview)
+1. [Technologies](#technologies)
+1. [Project Demo](#Demo)
+---
 
-### `npm start`
+## Overview
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Rancid Tomatillos is a Module 3 project in Turing School of Software and Design's front-end engineering curriculum. Our goal was to build a movie ratings website in React, populated with movie data and images from a provided API. Our basic deliverable was a web application that correctly displayed all movies in the API, but we decided to go above-and-beyond and implement some stretch features such as search, sorting by genre, and a banner of randomly generated movies. In addition to React, we used Router, and Cypress for testing. To stay organized when we were coding independently, we used a GitHub project board to track and assign issues.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Design, usability, and accessibilty were important to us in this project. Our designs lived in a Figma file, and we did careful planning and prototyping in Figma before we did any coding. Below is an example of how the main page of our application evolved over several iterations:
+![rancid iterations](https://user-images.githubusercontent.com/87143658/145927726-e13b4633-98ed-4ca0-8d50-844e0c826ba4.png)
 
-### `npm test`
+## Goals
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The project's goals, listed below in an abbreviated form, are taken directly from the Turing project write-up:
 
-### `npm run build`
+``` Markdown
+- Use OOP to drive the design of the application and the code
+- Work with an API to send and receive data
+- Solidify the code review process
+- Create a robust test suite with Cypress that thoroughly tests all functionality of a client-side application
+- Special consideration around accessibility and usability on devices. Lighthouse accessibility audit is at a 100%
+- Exceptionally well-factored code with little or no duplication. The business-logic code driving functionality is cleanly separated from rendering, view-related code. Excellent usage of fetch and updates DOM based on results of network requests. Handles all scenarios for error handling.
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Technologies
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+  - Command-line interface
+  - React
+  - Router
+  - Cypress
+  - JavaScript
+  - HTML
+  - CSS
+  - Sass
+  - Git
+  - Figma
+  - Fetch API
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Demo
 
-### `npm run eject`
+To see the project in action, clone the repo down to your local machine. Then, run:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```bash
+npm start
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+ > [Back to the top](#Rancid-Tomatillos)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
