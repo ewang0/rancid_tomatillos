@@ -1,3 +1,5 @@
+@use "src/mixins.scss" as mixin;
+
 .card {
     box-sizing: border-box;
     background-color: #000000;
@@ -6,8 +8,8 @@
     transition: all ease .3s, box-shadow .3s;
     cursor: pointer;
     width: 258px;
-    display: flex;
-    flex-direction: column;
+    @include mixin.flexbox(column, 0, 0);
+
     border-radius: 7px;
     overflow: hidden;
 
@@ -24,19 +26,12 @@
     .cardBottom {
         position: relative;
         height: 90px;
-        display: flex;
-        flex-direction: column;
-        // border: 1px solid black;
+        @include mixin.flexbox(column, 0, 0);
     }
 
     .cardInfo {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
+        @include mixin.flexbox(row, space-between, center);
         margin: 10px 0 0;
-        // border: 1px solid red;
-    
     }
 
     .cardTitle,
@@ -63,8 +58,7 @@
     }
 
     .ratings-wrapper {
-        display: flex;
-        align-items: center;
+        @include mixin.flexbox(0, 0, center);
         p {
             margin: 0px 0px 6px 10px;
             font-size: 14px;
@@ -73,12 +67,10 @@
 
     .ratingsContainer {
         height: 20%;
-        display: flex;
-        align-items: center;
+        @include mixin.flexbox(0, 0, center);
         margin-left: 15px;
         margin-bottom: 15px;
         margin-top: 8px;
-        // border: 1px solid rgb(0, 208, 255);
     }
 
 
