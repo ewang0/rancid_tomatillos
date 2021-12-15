@@ -92,5 +92,53 @@
 
 .modal-info {
   margin: 60px;
-  width: 34%;
+  width: 50%;
 }
+
+@media screen and (max-width: 600px) {
+  .modal {
+    @include mixin.flexbox(column, center, 0);
+    .close-modal {
+      position: absolute;
+      z-index: 2;
+      top: 0;
+      right: 0;
+      margin: 10px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      :hover {
+        opacity: 80%;
+      }
+      img {
+        width: 30px;
+      }
+    }
+  }
+  .modal_content {
+    @include mixin.flexbox(column-reverse, center, 0);
+    width: 98%;
+    margin-right: 0px;
+    height: 87%;
+    overflow-y: scroll;
+    .react-player {
+      display: flex;
+      flex: 1;
+      padding: 10px;
+      width: 95%;
+      height: 300px;
+      margin-right: 0px;
+      margin-top: 10px;
+    }
+      img {
+        width: 30px;
+      }
+    }
+    .modal-info{
+      width: 93%;
+      margin: 10px 10px 10px;
+      h2 {
+        margin: 2px;
+      }
+    }
+  }
