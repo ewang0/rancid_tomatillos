@@ -1,12 +1,14 @@
 import React from 'react';
 import './Footer.scss';
+import white_logo from '../../images/white_logo.svg';
+import react_logo from '../../images/react_logo.png';
 
 const Footer = () => {
     return(
         <footer className="footer-container">
             <div className="footer-content">
                 <section className="logo-description">
-                    <img src='./white-logo.svg'/>
+                    <img src={white_logo}/>
                     <p>Rancid Tomatillos is a Turing Module 3 project built with React.js, designed and developed by Eddie Krupicka and Eric Wang. It’s definitely NOT Rotten Tomatoes.</p>
                     <p className="copyright">©2021 Eddie Krupicka  and Eric Wang</p>
                 </section>
@@ -27,7 +29,7 @@ const Footer = () => {
                     </section>
                 </div>
             </div>
-            <img className='react-logo' src='./react-logo.png'/>
+            <img className='react-logo' src={react_logo}/>
         </footer>
     )
 }
