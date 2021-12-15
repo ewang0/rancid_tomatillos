@@ -42,3 +42,46 @@
     display: flex;
     margin-left: 150px;
 }
+
+@media screen and (max-width: 600px){
+   .about-container {
+       width: 100%;
+   }
+   profile-image {
+    height: 350px;
+    width: 90%;
+    border-radius: 5px;
+}
+
+.placeholder-box {
+    height: 350px;
+    width: 100%;
+
+}
+
+.profile-text {
+    @include mixin.flexbox(column, 0, 0);
+    width: 100%;
+    margin-right: 0px;
+    margin-left: 0px;
+    h2 {
+        margin-bottom: 0;
+    }
+}
+
+.eddie {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-right: 0px;
+    @include mixin.flexbox(column, center, center);
+}
+
+.eric {
+    @include mixin.flexbox(column, center, center);
+    display: flex;
+    flex-direction: column-reverse;
+    width: 100%;
+    margin-left: 0px;
+}
+}

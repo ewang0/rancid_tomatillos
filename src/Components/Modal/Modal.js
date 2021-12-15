@@ -32,7 +32,7 @@ const Modal = ({ selectedMovie, toggleModal, selectedMovieTrailerKey }) => {
               </tr>
             </table>
           </section>
-          <ReactPlayer className='react-player' url={movieTrailer} light={selectedMovie.backdrop_path} onError={console.log('trailer not available')} controls='true' playing='true' />
+          <ReactPlayer className='react-player' url={movieTrailer} light={selectedMovie.backdrop_path} onError={console.log('trailer not available')} controls='true' playing='true' width={'98%'} />
         </div>
       </div>
   )
