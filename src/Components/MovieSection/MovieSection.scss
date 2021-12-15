@@ -140,3 +140,38 @@ h1 {
         }
     }
   } 
+@media screen and (max-width: 1365px) {
+    .genres {
+        width: 1092px;
+    }
+    .movie-section {
+        .movie-section-header {
+            @include mixin.flexbox(0, center, 0);
+            margin: 20px 0px 20px 0px;
+        }
+    }
+}
+
+@media screen and (max-width: 1090px) {
+    .genres {
+        width: 814px;
+    }
+    .movie-section {
+        .movie-section-header {
+            @include mixin.flexbox(0, center, 0);
+            margin: 20px 0px 20px 0px;
+        }
+    }
+}
+
+@media screen and (max-width: 813px) {
+    .genres {
+        width: 546px;
+    }
+    .movie-section {
+        .movie-section-header {
+            @include mixin.flexbox(0, center, 0);
+            margin: 40px 0px 40px 0px;
+        }
+    }
+}
