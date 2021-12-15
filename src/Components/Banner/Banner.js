@@ -13,6 +13,15 @@ const Banner = ({ data }) => {
         leave: { opacity: 0 },
         config: config.default,
     })
+
+    const formatDescription = (desc) => {
+        if(desc.length > 350) {
+          let abbreviatedDescription = desc.substring(0, 347).concat('...');
+          return abbreviatedDescription;
+        } else {
+          return desc;
+          }
+      }
     
     const randomBanners = data.map((movieObj) => {
         return transition(
@@ -26,7 +35,7 @@ const Banner = ({ data }) => {
                             </div>
                             <p><b>{(movieObj.average_rating/2).toFixed(1)}</b></p>
                         </span>
-                        <p>{movieObj.overview}</p>
+                        <p className="description">{formatDescription(movieObj.overview)}</p>
                         <p><b>{movieObj.runtime} Minutes</b></p>
                     </div>
                     <div className="banner-image-wrapper">

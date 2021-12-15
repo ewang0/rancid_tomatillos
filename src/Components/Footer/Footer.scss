@@ -61,41 +61,10 @@ a {
     margin-left: 35px;
     margin: 60px 35px 0px 35px;
     @include mixin.flexbox(0, center, 0);
-}
-
-@media screen and (max-width: 600px) {
-    .footer-container {
-    @include mixin.flexbox(column, center, center);
-    height: 800px;
-
-    .react-logo {
-        position: relative;
-        width: 100px;
-    }
-    }
-    .logo-description {
-    width: 100%;
-    img {
-        width: 100%;
-    }
-    }
-    .linkedin {
-        margin-left: 0px;
-    }
-    
-    .github {
-        margin-left: 0px;
-    }
-    .repo {
-        margin-left: 0px;
-    }
-    .footer-content {
-    @include mixin.flexbox(column, center, 0)
-    }
     .links {
-        display:flex;
+        display: flex;
     }
-  } 
+}
 
 @media screen and (max-width: 1365px) {
     .footer-content {
@@ -111,20 +80,25 @@ a {
 
 @media screen and (max-width: 813px) {
     .footer-content {
+        .copyright {
+            margin-top: 30px;
+        }
         flex-direction: column;
         justify-content: flex-start;
         section {
             justify-content: center;
             margin: 0px;
             text-align: center;
+            h3 {
+                margin-top: 30px;
+                margin-bottom: 30px;
+            }
         }
         .links {
             padding-left: 20px;
         }
     }
-
     .footer-container {
-        height: 1000px;
-
+        height: 900px;
     }
 }

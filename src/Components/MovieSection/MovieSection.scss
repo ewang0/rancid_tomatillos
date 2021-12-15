@@ -80,13 +80,11 @@ h1 {
     margin: 0px 20px 0px;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 813px) {
     .movie-section {
-
         .movie-section-header {
             width: 100%;
             height: max-content;
-
             .genres {
                 display: grid;
                 margin-top: 10px;
@@ -132,14 +130,15 @@ h1 {
                     background-size: 100%;
                     background-position-y: 100%;
                     background-position-x: 100%;
-                 }
+                }
             }
         }
         h1 {
             margin: 20px 0px 20px;
         }
     }
-  } 
+} 
+
 @media screen and (max-width: 1365px) {
     .genres {
         width: 1092px;
@@ -160,18 +159,6 @@ h1 {
         .movie-section-header {
             @include mixin.flexbox(0, center, 0);
             margin: 20px 0px 20px 0px;
-        }
-    }
-}
-
-@media screen and (max-width: 813px) {
-    .genres {
-        width: 546px;
-    }
-    .movie-section {
-        .movie-section-header {
-            @include mixin.flexbox(0, center, 0);
-            margin: 40px 0px 40px 0px;
         }
     }
 }
