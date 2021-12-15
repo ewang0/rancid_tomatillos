@@ -2,9 +2,7 @@
 
 > A 2-week pair project by Eric Wang and Eddie Krupicka
 
-<p>
-<img src='https://user-images.githubusercontent.com/87044013/145934804-a6bcc413-3695-4233-b1a8-4d837798e075.gif' width=100%>
-	</p>
+
 <!-- ![WelllitFarflungAlligatorgar-size_restricted](https://user-images.githubusercontent.com/87044013/145934804-a6bcc413-3695-4233-b1a8-4d837798e075.gif)
  -->
 <img width="1437" alt="Screen Shot 2021-12-13 at 11 21 48 PM" src="https://user-images.githubusercontent.com/87143658/145932529-30a74f22-90b3-4b22-b40c-97d8dadc793b.png">
@@ -73,11 +71,13 @@ The project's goals, listed below in an abbreviated form, are taken directly fro
 
 ## Demo
 
-To see the project in action, clone the repo down to your local machine. Then, run:
+See our deployed application at: https://ewang0.github.io/rancid_tomatillos/
 
-```bash
-npm start
-```
+<p>
+<img src='https://user-images.githubusercontent.com/87044013/145934804-a6bcc413-3695-4233-b1a8-4d837798e075.gif' width=100%>
+	</p>
+
+
 
  > [Back to the top](#Rancid-Tomatillos)
 
