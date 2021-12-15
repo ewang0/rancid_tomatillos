@@ -34,3 +34,26 @@ nav {
 .logo active{
     border-bottom: none;
 }
+
+@media screen and (max-width: 600px) {
+   nav {
+       height: 170px;
+       @include mixin.flexbox(column, space-around, center);
+       width: 100%;
+       .nav-links{
+           margin: 0px;
+           @include mixin.flexbox(row, space-between, center);
+           .nav-link {
+               margin: 10px;
+           }
+       }
+       
+       img {
+        height: 40px;
+        margin-left: 0px;
+        }
+        .logo {
+            height: 40px;
+        }
+   }
+  } 

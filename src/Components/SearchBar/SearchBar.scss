@@ -83,3 +83,12 @@ input:-webkit-autofill:active  {
 	transition: background-color 5000s;
 	-webkit-text-fill-color: #fff !important;
 }
+
+@media screen and (max-width: 600px) {
+	.searchContainer {
+		position: relative;
+		margin-top: 5px;
+		margin-bottom: 10px;
+		margin-right: 0px;
+	}
+ } 
