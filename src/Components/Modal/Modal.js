@@ -2,6 +2,7 @@ import React from 'react';
 import './Modal.scss';
 import ReactStars from 'react-stars';
 import ReactPlayer from "react-player"
+import x_icon from '../../images/x_icon.png';
 
 const Modal = ({ selectedMovie, toggleModal, selectedMovieTrailerKey }) => {
 
@@ -9,7 +10,7 @@ const Modal = ({ selectedMovie, toggleModal, selectedMovieTrailerKey }) => {
 
   return (
       <div className='modal' onClick={(e) => e.target.classList.contains('modal') ? toggleModal() : console.log(e.target.classList)}>
-        <button className='close-modal' onClick={toggleModal}><img src="../x_icon.png" alt='icon.png'/></button>
+        <button className='close-modal' onClick={toggleModal}><img src={x_icon} alt='icon.png'/></button>
         <div className='modal_content'>
           <section className='modal-info'>
             <h2>{selectedMovie.title}</h2>
@@ -32,7 +33,7 @@ const Modal = ({ selectedMovie, toggleModal, selectedMovieTrailerKey }) => {
               </tr>
             </table>
           </section>
-          <ReactPlayer className='react-player' url={movieTrailer} light={selectedMovie.backdrop_path} onError={console.log('trailer not available')} controls='true' playing='true' />
+          <ReactPlayer className='react-player' url={movieTrailer} light={selectedMovie.backdrop_path} onError={console.log('trailer not available')} controls='true' playing='true' width={'98%'} />
         </div>
       </div>
   )

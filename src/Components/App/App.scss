@@ -7,3 +7,9 @@ html, body {
     background-attachment: fixed;
     font-family: 'Montserrat', sans-serif;
 }
+
+@media screen and (max-width: 600px) {
+    .app {
+     position: relative;
+    }
+  } 

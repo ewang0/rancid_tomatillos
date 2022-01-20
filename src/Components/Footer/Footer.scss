@@ -13,8 +13,6 @@ a {
     width: 100%;
     margin-top: 40px;
     color: white;
-    display: flex;
-    justify-content: center;
     @include mixin.flexbox(0, center, 0);
     section {
         @include mixin.flexbox(column, 0, 0);
@@ -37,11 +35,11 @@ a {
 }
 
 .logo-description {
+    width: 420px;
     img {
         height: 60px;
         width: 400px;
     }
-    width: 420px;
     .copyright {
         margin-top: 60px;
     }
@@ -63,4 +61,44 @@ a {
     margin-left: 35px;
     margin: 60px 35px 0px 35px;
     @include mixin.flexbox(0, center, 0);
+    .links {
+        display: flex;
+    }
+}
+
+@media screen and (max-width: 1365px) {
+    .footer-content {
+        .links {
+            flex-direction: column;
+        }
+    }
+
+    .footer-container {
+        height: 650px;
+    }
+}
+
+@media screen and (max-width: 813px) {
+    .footer-content {
+        .copyright {
+            margin-top: 30px;
+        }
+        flex-direction: column;
+        justify-content: flex-start;
+        section {
+            justify-content: center;
+            margin: 0px;
+            text-align: center;
+            h3 {
+                margin-top: 30px;
+                margin-bottom: 30px;
+            }
+        }
+        .links {
+            padding-left: 20px;
+        }
+    }
+    .footer-container {
+        height: 900px;
+    }
 }

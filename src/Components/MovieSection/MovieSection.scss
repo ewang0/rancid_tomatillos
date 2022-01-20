@@ -14,13 +14,14 @@
     min-height: 700px;
     .movie-section-header {
         @include mixin.flexbox(0, 0, center);
-        height: 80px;
+        height: 100px;
         h1 {
             margin-left: 35px;
         }
         .genres {
             margin-top: 30px;
             margin-bottom: 30px;
+            margin-left: 8px;
             color: lightgray;
             padding-inline-start: 10px;
 
@@ -74,7 +75,90 @@
 }
 
 h1 {
-    color: lightgray;
+    color: white;
     font-size: 30px;
     margin: 0px 20px 0px;
+}
+
+@media screen and (max-width: 813px) {
+    .movie-section {
+        .movie-section-header {
+            width: 100%;
+            height: max-content;
+            .genres {
+                display: grid;
+                margin-top: 10px;
+                grid-gap: 5px;
+                grid-template-areas:
+                "b b b"
+                "b b b"
+                "b b b"
+                "b b b"
+                "b b b"
+                "a a a";
+                width: 100%;
+                padding-left: 0px;
+                justify-content: center;
+                .All {
+                    justify-self: center;
+                    grid-area: a;
+                    font-size: 20px;
+                    width: 150px;
+                    margin: 5px 0px 0px;
+                    height: 60px;
+                }
+                button{
+                    width: 100px;
+                    transition: 0.3s ease;
+                    height: 55px;
+                    background-color: rgb(55, 55, 55);
+                    border-radius: 10px;
+                    border: 1px solid rgb(54, 54, 54);
+                    margin: 5px 5px 5px;
+                    transition: 0.3s ease;
+                }
+            
+                .active,
+                :hover,
+                :focus {
+                    color: white;
+                    font-weight: bolder;
+                    background-size: 100% 0.2em;
+                    border-color: #7F923C;;
+                    background-color: rgb(30, 30, 30);
+                    background-image: none;
+                    background-size: 100%;
+                    background-position-y: 100%;
+                    background-position-x: 100%;
+                }
+            }
+        }
+        h1 {
+            margin: 20px 0px 20px;
+        }
+    }
+} 
+
+@media screen and (max-width: 1365px) {
+    .genres {
+        width: 1092px;
+    }
+    .movie-section {
+        .movie-section-header {
+            @include mixin.flexbox(0, center, 0);
+            margin: 20px 0px 20px 0px;
+        }
+    }
+}
+
+@media screen and (max-width: 1090px) {
+    .genres {
+        width: 814px;
+    }
+    .movie-section {
+        .movie-section-header {
+            @include mixin.flexbox(0, center, 0);
+            margin: 20px 0px 20px 0px;
+        }
+    }
 }

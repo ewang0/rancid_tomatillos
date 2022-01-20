@@ -1,6 +1,7 @@
 import React from 'react';
 import './SearchBar.scss'
 import { NavLink, useLocation } from 'react-router-dom';
+import search from '../../images/search.svg';
 
 const SearchBar = (props) => {
     const currentPath = useLocation().pathname;
@@ -10,7 +11,7 @@ const SearchBar = (props) => {
         <label htmlFor="header-search">
             <span className="visually-hidden">Search Movies</span>
         </label>
-        <NavLink to={currentPath === '/search' ? '/' : '/search'}><img className="icon" src="./search.svg" alt="search.svg"/></NavLink>
+        <NavLink to={currentPath === '/search' ? '/' : '/search'}><img className="icon" src={search} alt="search.svg"/></NavLink>
         <input
             className={ currentPath === '/search' ? 'searchBar show' : 'searchBar' }
             type="text"

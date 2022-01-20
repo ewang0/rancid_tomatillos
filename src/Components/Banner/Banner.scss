@@ -11,8 +11,9 @@
 
 .banner-image-wrapper {
     position: relative;
+    height: inherit;
     img {
-        height: 450px;
+        height: inherit;
     }
 }
 
@@ -20,6 +21,7 @@
     position: relative;
     color: white;
     margin: 0px 125px 0px 125px;
+    font-size: 1.1vw;
 }
 
 .banner-image-overlay {
@@ -34,8 +36,17 @@
 
 .ratings-wrapper {
     @include mixin.flexbox(0, 0, center);
+    .reactStars {
+        flex-wrap: nowrap;
+    }
     p {
         margin: 1px 0px 0px 10px;
         font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 1338px) {
+    .banner {
+        display: none;
     }
 }
