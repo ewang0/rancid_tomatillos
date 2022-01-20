@@ -107,7 +107,7 @@ class App extends Component {
         <Routes>
             <Route path="/" element={      
                 <section>
-                  <Banner data={detailedMovies} key={'banner'}/>
+                  {loaded ? <Banner data={detailedMovies} key={'banner'}/> : <h1>Loading</h1>}
                   {loaded ? <MovieSection data={newArray} detailedData={movieData} toggleModal={this.toggleModal} filterByGenre={this.filterByGenre} header={'All Movies'}/> : <h1>Loading</h1>}
                   {showModal ? <Modal selectedMovie={selectedMovie} selectedMovieTrailerKey={selectedMovieTrailerKey} toggleModal={this.toggleModal}/> : null}
                 </section>
