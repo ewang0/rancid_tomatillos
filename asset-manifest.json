@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/rancid_tomatillos/static/css/main.b375ee54.chunk.css",
-    "main.js": "/rancid_tomatillos/static/js/main.972d5bdf.chunk.js",
-    "main.js.map": "/rancid_tomatillos/static/js/main.972d5bdf.chunk.js.map",
+    "main.css": "/rancid_tomatillos/static/css/main.fa05f790.chunk.css",
+    "main.js": "/rancid_tomatillos/static/js/main.38470db7.chunk.js",
+    "main.js.map": "/rancid_tomatillos/static/js/main.38470db7.chunk.js.map",
     "runtime-main.js": "/rancid_tomatillos/static/js/runtime-main.9f159c66.js",
     "runtime-main.js.map": "/rancid_tomatillos/static/js/runtime-main.9f159c66.js.map",
     "static/js/2.58221fb2.chunk.js": "/rancid_tomatillos/static/js/2.58221fb2.chunk.js",
@@ -10,13 +10,18 @@
     "static/js/3.68587477.chunk.js": "/rancid_tomatillos/static/js/3.68587477.chunk.js",
     "static/js/3.68587477.chunk.js.map": "/rancid_tomatillos/static/js/3.68587477.chunk.js.map",
     "index.html": "/rancid_tomatillos/index.html",
-    "static/css/main.b375ee54.chunk.css.map": "/rancid_tomatillos/static/css/main.b375ee54.chunk.css.map",
-    "static/js/2.58221fb2.chunk.js.LICENSE.txt": "/rancid_tomatillos/static/js/2.58221fb2.chunk.js.LICENSE.txt"
+    "static/css/main.fa05f790.chunk.css.map": "/rancid_tomatillos/static/css/main.fa05f790.chunk.css.map",
+    "static/js/2.58221fb2.chunk.js.LICENSE.txt": "/rancid_tomatillos/static/js/2.58221fb2.chunk.js.LICENSE.txt",
+    "static/media/eddie_profile.34170858.jpg": "/rancid_tomatillos/static/media/eddie_profile.34170858.jpg",
+    "static/media/eric_profile.0bf551b8.jpeg": "/rancid_tomatillos/static/media/eric_profile.0bf551b8.jpeg",
+    "static/media/logo.a34d2078.svg": "/rancid_tomatillos/static/media/logo.a34d2078.svg",
+    "static/media/search.4086966a.svg": "/rancid_tomatillos/static/media/search.4086966a.svg",
+    "static/media/white_logo.139db537.svg": "/rancid_tomatillos/static/media/white_logo.139db537.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.9f159c66.js",
     "static/js/2.58221fb2.chunk.js",
-    "static/css/main.b375ee54.chunk.css",
-    "static/js/main.972d5bdf.chunk.js"
+    "static/css/main.fa05f790.chunk.css",
+    "static/js/main.38470db7.chunk.js"
   ]
 }
