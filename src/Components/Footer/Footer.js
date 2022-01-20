@@ -8,7 +8,7 @@ const Footer = () => {
         <footer className="footer-container">
             <div className="footer-content">
                 <section className="logo-description">
-                    <img src={white_logo}/>
+                    <img src={white_logo} alt="Rancid Tomatillos logo"/>
                     <p>Rancid Tomatillos is a Turing Module 3 project built with React.js, designed and developed by Eddie Krupicka and Eric Wang. It’s definitely NOT Rotten Tomatoes.</p>
                     <p className="copyright">©2021 Eddie Krupicka  and Eric Wang</p>
                 </section>
@@ -29,7 +29,7 @@ const Footer = () => {
                     </section>
                 </div>
             </div>
-            <img className='react-logo' src={react_logo}/>
+            <img className='react-logo' src={react_logo} alt="React logo" />
         </footer>
     )
 }
